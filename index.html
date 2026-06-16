@@ -76,6 +76,28 @@
             display: block;
         }
 
+        .skip-link {
+            position: fixed;
+            top: 12px;
+            left: 12px;
+            z-index: 2000;
+            padding: 10px 14px;
+            color: var(--white);
+            background: var(--primary);
+            border-radius: 999px;
+            transform: translateY(-140%);
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+            outline: 3px solid rgba(0, 180, 216, 0.45);
+        }
+
+        .touch-target {
+            min-width: 44px;
+            min-height: 44px;
+        }
+
         .section {
             position: relative;
             padding: 92px 0;
@@ -701,7 +723,90 @@
         .credential-overlay h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 6px; }
         .credential-overlay p { color: rgba(255, 255, 255, 0.88); margin-bottom: 0; }
 
-        /* Blog - QA fixed, no overlapping text/images */
+        /* Blog - mobile-first, filterable, no overlapping text/images */
+        .blog-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            max-width: 1040px;
+            margin: 0 auto 24px;
+            padding: 14px;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.86);
+            box-shadow: var(--shadow-soft);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .blog-search {
+            position: relative;
+            flex: 1 1 280px;
+        }
+
+        .blog-search i {
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            color: var(--primary);
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .blog-search input {
+            width: 100%;
+            min-height: 48px;
+            padding: 12px 16px 12px 43px;
+            color: var(--ink);
+            border: 1px solid rgba(29, 30, 136, 0.12);
+            border-radius: 999px;
+            background: var(--white);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+            font-weight: 750;
+            outline: none;
+        }
+
+        .blog-search input:focus {
+            border-color: rgba(29, 30, 136, 0.38);
+            box-shadow: 0 0 0 4px rgba(29, 30, 136, 0.08);
+        }
+
+        .blog-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
+        .blog-filter {
+            min-height: 44px;
+            padding: 10px 15px;
+            color: var(--primary);
+            border: 1px solid rgba(29, 30, 136, 0.14);
+            border-radius: 999px;
+            background: rgba(29, 30, 136, 0.06);
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        .blog-filter:hover,
+        .blog-filter.active {
+            color: var(--white);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            box-shadow: 0 12px 26px rgba(29, 30, 136, 0.20);
+        }
+
+        .blog-result-count {
+            max-width: 1040px;
+            margin: 0 auto 18px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-align: left;
+        }
+
         .blog-list {
             display: grid;
             grid-template-columns: 1fr;
@@ -727,17 +832,24 @@
             transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
         }
 
-        .blog-card:hover {
+        .blog-card:hover,
+        .blog-card:focus-within {
             transform: translateY(-9px);
             border-color: rgba(29, 30, 136, 0.24);
             box-shadow: var(--shadow);
+        }
+
+        .blog-card.hide {
+            display: none;
         }
 
         .blog-card-media {
             position: relative;
             min-height: 310px;
             overflow: hidden;
-            background: var(--light);
+            background:
+                linear-gradient(135deg, rgba(29, 30, 136, 0.78), rgba(0, 180, 216, 0.68)),
+                var(--light);
         }
 
         .blog-card-img {
@@ -748,7 +860,8 @@
             transition: transform 0.5s ease, filter 0.5s ease;
         }
 
-        .blog-card:hover .blog-card-img {
+        .blog-card:hover .blog-card-img,
+        .blog-card:focus-within .blog-card-img {
             transform: scale(1.06);
             filter: saturate(1.08);
         }
@@ -792,6 +905,9 @@
         }
 
         .blog-card-caption {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 12px;
             margin-bottom: 14px;
             color: var(--muted);
             font-size: 0.92rem;
@@ -814,7 +930,7 @@
             align-items: center;
             align-self: flex-start;
             gap: 9px;
-            min-height: 42px;
+            min-height: 44px;
             padding: 11px 16px;
             color: var(--primary);
             background: rgba(29, 30, 136, 0.07);
@@ -822,10 +938,28 @@
             font-weight: 900;
         }
 
-        .blog-card-link:hover {
+        .blog-card-link:hover,
+        .blog-card-link:focus {
             gap: 15px;
             color: var(--white);
             background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            outline: none;
+        }
+
+        .empty-blog-state {
+            display: none;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 30px;
+            color: var(--muted);
+            border: 1px dashed rgba(29, 30, 136, 0.20);
+            border-radius: var(--radius-lg);
+            background: rgba(255, 255, 255, 0.78);
+            font-weight: 800;
+        }
+
+        .empty-blog-state.show {
+            display: block;
         }
 
         /* Contact */
@@ -1000,7 +1134,12 @@
             .profile-orbit { width: min(100%, 285px); }
             .about-caption, .contact-panel { padding: 28px 22px; }
             .credential-card img { height: 210px; }
+            .blog-toolbar { align-items: stretch; padding: 12px; border-radius: 20px; }
+            .blog-filters { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }
+            .blog-filter { flex: 0 0 auto; }
+            .blog-result-count { text-align: center; }
             .blog-list { gap: 22px; }
+            .blog-card { border-radius: 22px; }
             .blog-card-media, .blog-card-img { min-height: 220px; }
             .blog-card-body { padding: 24px; }
             .blog-card-link { width: 100%; justify-content: center; }
@@ -1009,6 +1148,7 @@
 </head>
 
 <body data-spy="scroll" data-target=".custom-navbar" data-offset="80">
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="nav-progress" id="navProgress" aria-hidden="true"></div>
 
     <!-- Page Navbar -->
@@ -1029,7 +1169,7 @@
                 </ul>
             </div>
 
-            <button type="button" id="nav-toggle" class="hamburger" aria-label="Toggle navigation" aria-controls="siteNav" aria-expanded="false">
+            <button type="button" id="nav-toggle" class="hamburger touch-target" aria-label="Toggle navigation" aria-controls="siteNav" aria-expanded="false">
                 <span></span>
             </button>
         </div>
@@ -1037,6 +1177,7 @@
     <!-- End of Page Navbar -->
 
     <!-- Hero Header -->
+    <main id="main-content" tabindex="-1">
     <header id="home" class="header">
         <div class="container">
             <div class="hero-grid">
@@ -1277,11 +1418,28 @@
             <p class="section-subtitle reveal">Thoughts &amp; Insights</p>
             <h2 class="section-title reveal">From My Blog</h2>
             <p class="section-intro reveal">
-                Reflections on career growth, personal branding, balance, and the human side of professional success.
+                Reflections on career growth, workplace culture, HR, social change, balance, and the human side of professional success.
             </p>
 
-            <div class="blog-list">
-                <article class="blog-card reveal">
+            <div class="blog-toolbar reveal" aria-label="Blog filters and search">
+                <label class="blog-search" for="blogSearch">
+                    <i class="ti-search" aria-hidden="true"></i>
+                    <input type="search" id="blogSearch" placeholder="Search articles..." autocomplete="off">
+                </label>
+
+                <div class="blog-filters" role="group" aria-label="Filter blog posts by topic">
+                    <button type="button" class="blog-filter active" data-filter="all">All</button>
+                    <button type="button" class="blog-filter" data-filter="career">Career</button>
+                    <button type="button" class="blog-filter" data-filter="hr">HR</button>
+                    <button type="button" class="blog-filter" data-filter="workplace">Workplace</button>
+                    <button type="button" class="blog-filter" data-filter="society">Society</button>
+                </div>
+            </div>
+
+            <p class="blog-result-count reveal" id="blogResultCount">Showing all articles</p>
+
+            <div class="blog-list" id="blogList">
+                <article class="blog-card reveal" data-category="career" data-title="How to Build A Strong Personal Brand for Career Success? personal branding career growth">
                     <div class="blog-card-media">
                         <img src="assets/imgs/b1.jpg" class="blog-card-img" alt="Personal Branding">
                         <span class="blog-badge"><i class="ti-pencil-alt"></i> Career Growth</span>
@@ -1291,13 +1449,14 @@
                         <h3 class="blog-card-title">How to Build A Strong Personal Brand for Career Success?</h3>
                         <p class="blog-card-caption">
                             <a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank" rel="noopener">By ABC Corp Nepal</a>
+                            <span>Career</span>
                         </p>
-                        <p class="blog-card-text">In today's competitive world, personal branding isn't optional — it's essential for building credibility, visibility, and long-term career opportunity.</p>
+                        <p class="blog-card-text">Personal branding is not optional anymore. It helps professionals build credibility, visibility, and long-term career opportunity.</p>
                         <a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
                     </div>
                 </article>
 
-                <article class="blog-card reveal">
+                <article class="blog-card reveal" data-category="workplace" data-title="Is Work-Life Balance a Myth, Cycle, or Achievement? balance wellbeing rhythm">
                     <div class="blog-card-media">
                         <img src="assets/imgs/b2.jpg" class="blog-card-img" alt="Work-Life Balance">
                         <span class="blog-badge"><i class="ti-heart"></i> Work &amp; Life</span>
@@ -1307,12 +1466,100 @@
                         <h3 class="blog-card-title">Is Work-Life Balance a Myth, Cycle, or Achievement?</h3>
                         <p class="blog-card-caption">
                             <a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank" rel="noopener">By ABC Corp Nepal</a>
+                            <span>Workplace</span>
                         </p>
-                        <p class="blog-card-text">Is perfect balance possible? Or is it about rhythm, seasons, and conscious choices that help us sustain performance and well-being?</p>
+                        <p class="blog-card-text">A reflection on whether balance is a fixed destination, a repeating cycle, or a set of conscious choices that protect performance and well-being.</p>
                         <a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
                     </div>
                 </article>
+
+                <article class="blog-card reveal" data-category="workplace" data-title="Gentle reminder corporate communication follow up patience accountability">
+                    <div class="blog-card-media">
+                        <img src="https://media.licdn.com/dms/image/v2/D5612AQFhPGx_EQiPNg/article-cover_image-shrink_720_1280/B56Z61Xd4zHIAU-/0/1781159294515?e=2147483647&amp;t=dHI5AwGx-nc724_3hQXHIVx-5w3cmE7Va9SH-fwqVLY&amp;v=beta" class="blog-card-img" alt="Gentle Reminder article image" loading="lazy">
+                        <span class="blog-badge"><i class="ti-email"></i> Workplace</span>
+                    </div>
+
+                    <div class="blog-card-body">
+                        <h3 class="blog-card-title">“Gentle reminder” is the corporate way of saying, “I have already reminded you three times...”</h3>
+                        <p class="blog-card-caption">
+                            <a href="https://www.linkedin.com/pulse/gentle-reminder-corporate-way-saying-i-have-already-you-maharjan-4yh7c/" target="_blank" rel="noopener">By Oshan Maharjan</a>
+                            <span>Jun 11, 2026</span>
+                        </p>
+                        <p class="blog-card-text">A sharp and relatable take on corporate follow-ups, tone, accountability, and the quiet meaning behind polite reminders.</p>
+                        <a href="https://www.linkedin.com/pulse/gentle-reminder-corporate-way-saying-i-have-already-you-maharjan-4yh7c/" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card reveal" data-category="society" data-title="The GenZ Movement Pain to Purpose Nepal history youth corruption free speech hope">
+                    <div class="blog-card-media">
+                        <img src="https://media.licdn.com/dms/image/v2/D5612AQH0dca5LTnfBQ/article-cover_image-shrink_720_1280/B56ZkyBQc1I8AI-/0/1757480815245?e=2147483647&amp;t=TUaoc-4c_ZW_q7c4Z31l6LVRFoRaRVaErSWTWN3gpHE&amp;v=beta" class="blog-card-img" alt="GenZ Movement article image" loading="lazy">
+                        <span class="blog-badge"><i class="ti-flag-alt"></i> Society</span>
+                    </div>
+
+                    <div class="blog-card-body">
+                        <h3 class="blog-card-title">The GenZ Movement: Pain to Purpose, A New Chapter of Nepal</h3>
+                        <p class="blog-card-caption">
+                            <a href="https://www.linkedin.com/pulse/genz-movement-pain-purpose-new-chapter-nepal-history-never-maharjan-khooc/" target="_blank" rel="noopener">By Oshan Maharjan</a>
+                            <span>Sep 10, 2025</span>
+                        </p>
+                        <p class="blog-card-text">A heartfelt reflection on youth-led courage, grief, chaos, and the responsibility to rebuild Nepal with hope and wisdom.</p>
+                        <a href="https://www.linkedin.com/pulse/genz-movement-pain-purpose-new-chapter-nepal-history-never-maharjan-khooc/" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card reveal" data-category="workplace" data-title="Some days I think for 6 hours and work for 2 hours yet it still works productivity thinking burnout human performance">
+                    <div class="blog-card-media">
+                        <img src="https://media.licdn.com/dms/image/v2/D5612AQFJ4gNyxDY-ug/article-cover_image-shrink_720_1280/B56ZtEgTv.GsAM-/0/1766380881150?e=2147483647&amp;t=A2OeJtX7dLdOxgkHW7eV63wvIba2jzChEu8CiWwkQqE&amp;v=beta" class="blog-card-img" alt="Strategic thinking and productivity article image" loading="lazy">
+                        <span class="blog-badge"><i class="ti-time"></i> Productivity</span>
+                    </div>
+
+                    <div class="blog-card-body">
+                        <h3 class="blog-card-title">Some Days I Think for 6 Hours and Work for About 2 Hours, Yet It Still Works</h3>
+                        <p class="blog-card-caption">
+                            <a href="https://www.linkedin.com/pulse/some-days-i-think-6-hours-work-2-yet-still-works-oshan-maharjan-vdsac/" target="_blank" rel="noopener">By Oshan Maharjan</a>
+                            <span>Dec 22, 2025</span>
+                        </p>
+                        <p class="blog-card-text">A human-centered reminder that output is not always linear, and that deep thinking can be as valuable as visible execution.</p>
+                        <a href="https://www.linkedin.com/pulse/some-days-i-think-6-hours-work-2-yet-still-works-oshan-maharjan-vdsac/" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card reveal" data-category="hr" data-title="Two Worlds of HR Wearing All the Hats vs Playing One Well small business HR large business HR">
+                    <div class="blog-card-media">
+                        <img src="https://media.licdn.com/dms/image/v2/D5612AQFeFSril2yE9g/article-cover_image-shrink_720_1280/B56Zj0U_79HkAI-/0/1756445814510?e=2147483647&amp;t=Itx1JpCAGZXH1HRNIWNRH8_ZrbBEi2xIBy3r5ETmYlE&amp;v=beta" class="blog-card-img" alt="Small business HR and large business HR article image" loading="lazy">
+                        <span class="blog-badge"><i class="ti-briefcase"></i> HR</span>
+                    </div>
+
+                    <div class="blog-card-body">
+                        <h3 class="blog-card-title">Two Worlds of HR: Wearing All the Hats vs. Playing One Well</h3>
+                        <p class="blog-card-caption">
+                            <a href="https://www.linkedin.com/pulse/two-worlds-hr-wearing-all-hats-vs-playing-one-well-oshan-maharjan-24pdc/" target="_blank" rel="noopener">By Oshan Maharjan</a>
+                            <span>Aug 29, 2025</span>
+                        </p>
+                        <p class="blog-card-text">A comparison of small enterprise HR and large corporate HR, and how both experiences build different but equally valuable professional muscles.</p>
+                        <a href="https://www.linkedin.com/pulse/two-worlds-hr-wearing-all-hats-vs-playing-one-well-oshan-maharjan-24pdc/" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card reveal" data-category="career" data-title="Why do people apply for jobs they clearly know they do not align well recruitment applicants ATS mismatch">
+                    <div class="blog-card-media">
+                        <img src="https://media.licdn.com/dms/image/v2/D5612AQFRwZNPlvj4-g/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1731913350238?e=2147483647&amp;t=iHkWjXV2kK5yFmcYhAJdoiDOMXjTg_qk_qB8rOxtQv4&amp;v=beta" class="blog-card-img" alt="Recruitment mismatch article image" loading="lazy">
+                        <span class="blog-badge"><i class="ti-user"></i> Recruitment</span>
+                    </div>
+
+                    <div class="blog-card-body">
+                        <h3 class="blog-card-title">Why Do People Apply for Jobs They Clearly Know They Don’t Align Well?</h3>
+                        <p class="blog-card-caption">
+                            <a href="https://www.linkedin.com/pulse/why-do-people-apply-jobs-clearly-know-dont-align-well-oshan-maharjan-01fpc/" target="_blank" rel="noopener">By Oshan Maharjan</a>
+                            <span>Nov 18, 2024</span>
+                        </p>
+                        <p class="blog-card-text">A recruiter’s humorous look at mismatched applications, spray-and-pray job hunting, misunderstood roles, and optimistic candidates.</p>
+                        <a href="https://www.linkedin.com/pulse/why-do-people-apply-jobs-clearly-know-dont-align-well-oshan-maharjan-01fpc/" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                    </div>
+                </article>
             </div>
+
+            <div class="empty-blog-state" id="emptyBlogState">No articles matched your search. Try another keyword or choose All.</div>
         </div>
     </section>
     <!-- End of Blog -->
@@ -1343,6 +1590,7 @@
         </div>
     </section>
     <!-- End of Contact -->
+    </main>
 
     <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
         <i class="ti-angle-up"></i>
@@ -1485,6 +1733,70 @@
                     heroCard.style.transform = '';
                 });
             }
+
+            document.addEventListener('click', function (event) {
+                if (!siteNav || !navToggle) return;
+                const clickInsideNav = siteNav.contains(event.target) || navToggle.contains(event.target);
+                if (!clickInsideNav && siteNav.classList.contains('show')) closeMobileNav();
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') closeMobileNav();
+            });
+
+            document.querySelectorAll('.blog-card-img').forEach(function (img) {
+                img.addEventListener('error', function () {
+                    img.style.display = 'none';
+                    const parent = img.closest('.blog-card-media');
+                    if (parent) parent.setAttribute('aria-label', img.getAttribute('alt') || 'Article image');
+                });
+            });
+
+            const blogSearch = document.getElementById('blogSearch');
+            const blogFilters = Array.from(document.querySelectorAll('.blog-filter'));
+            const blogCards = Array.from(document.querySelectorAll('.blog-card'));
+            const blogResultCount = document.getElementById('blogResultCount');
+            const emptyBlogState = document.getElementById('emptyBlogState');
+            let activeBlogFilter = 'all';
+
+            function updateBlogCards() {
+                const query = blogSearch ? blogSearch.value.trim().toLowerCase() : '';
+                let visibleCount = 0;
+
+                blogCards.forEach(function (card) {
+                    const category = card.getAttribute('data-category') || '';
+                    const searchable = (card.getAttribute('data-title') + ' ' + card.textContent).toLowerCase();
+                    const matchesFilter = activeBlogFilter === 'all' || category === activeBlogFilter;
+                    const matchesSearch = !query || searchable.indexOf(query) !== -1;
+                    const show = matchesFilter && matchesSearch;
+                    card.classList.toggle('hide', !show);
+                    if (show) visibleCount += 1;
+                });
+
+                if (blogResultCount) {
+                    blogResultCount.textContent = visibleCount === blogCards.length
+                        ? 'Showing all articles'
+                        : 'Showing ' + visibleCount + ' of ' + blogCards.length + ' articles';
+                }
+
+                if (emptyBlogState) emptyBlogState.classList.toggle('show', visibleCount === 0);
+            }
+
+            blogFilters.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    activeBlogFilter = button.getAttribute('data-filter') || 'all';
+                    blogFilters.forEach(function (item) {
+                        item.classList.toggle('active', item === button);
+                    });
+                    updateBlogCards();
+                });
+            });
+
+            if (blogSearch) {
+                blogSearch.addEventListener('input', updateBlogCards);
+            }
+
+            updateBlogCards();
 
             if (backToTop) {
                 backToTop.addEventListener('click', function () {
