@@ -6,27 +6,994 @@
     <meta name="description" content="Oshan Maharjan - HR Leader | Strategic People Partner | Learner & Explorer">
     <meta name="author" content="Oshan Maharjan">
     <title>Oshan Maharjan | HR Professional & Strategic Leader</title>
-    
+
     <!-- Font Icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + Meyawo Main Styles -->
     <link rel="stylesheet" href="assets/css/meyawo.css">
+
+    <style>
+        :root {
+            --brand: #1d1e88;
+            --brand-2: #5b5ff0;
+            --accent: #00b4d8;
+            --ink: #111327;
+            --text: #535670;
+            --muted: #7a7d95;
+            --soft: #f5f7ff;
+            --white: #ffffff;
+            --line: rgba(29, 30, 136, 0.12);
+            --shadow: 0 24px 70px rgba(17, 19, 39, 0.12);
+            --shadow-sm: 0 14px 36px rgba(17, 19, 39, 0.09);
+            --radius-xl: 30px;
+            --radius-lg: 22px;
+            --radius-md: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 10% 10%, rgba(29, 30, 136, 0.09), transparent 28%),
+                radial-gradient(circle at 90% 8%, rgba(0, 180, 216, 0.12), transparent 30%),
+                linear-gradient(180deg, #ffffff 0%, #f8f9ff 45%, #ffffff 100%);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(29, 30, 136, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(29, 30, 136, 0.035) 1px, transparent 1px);
+            background-size: 46px 46px;
+        }
+
+        a,
+        button {
+            transition: all 0.25s ease;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .section {
+            position: relative;
+            padding: 92px 0;
+        }
+
+        .section-subtitle {
+            color: var(--brand);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            color: var(--ink);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 18px;
+        }
+
+        .section-intro {
+            max-width: 720px;
+            margin: 0 auto 42px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .creative-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        }
+
+        .creative-card:hover {
+            transform: translateY(-9px);
+            border-color: rgba(29, 30, 136, 0.23);
+            box-shadow: var(--shadow);
+        }
+
+        /* Fixed navbar independent of template quirks */
+        .custom-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 14px 0;
+            background: rgba(255, 255, 255, 0.88);
+            border-bottom: 1px solid rgba(29, 30, 136, 0.08);
+            box-shadow: 0 10px 32px rgba(17, 19, 39, 0.06);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .custom-navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .custom-navbar .logo {
+            color: var(--brand);
+            font-size: 1.08rem;
+            font-weight: 900;
+            letter-spacing: -0.3px;
+            white-space: nowrap;
+        }
+
+        .custom-navbar .nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 4px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .custom-navbar .item {
+            margin: 0;
+            padding: 0;
+        }
+
+        .custom-navbar .link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+            padding: 8px 13px;
+            color: var(--ink);
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            line-height: 1;
+            opacity: 0.78;
+        }
+
+        .custom-navbar .link:hover,
+        .custom-navbar .link.active {
+            color: var(--brand);
+            background: rgba(29, 30, 136, 0.08);
+            opacity: 1;
+        }
+
+        .hamburger {
+            display: none;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: rgba(29, 30, 136, 0.08);
+        }
+
+        .hamburger-box,
+        .hamburger-inner,
+        .hamburger-inner::before,
+        .hamburger-inner::after {
+            pointer-events: none;
+        }
+
+        /* Hero */
+        .header {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 125px 0 80px;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 18% 28%, rgba(29, 30, 136, 0.12), transparent 28%),
+                radial-gradient(circle at 82% 32%, rgba(0, 180, 216, 0.16), transparent 26%);
+        }
+
+        .header::before,
+        .header::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            animation: floatShape 8s ease-in-out infinite;
+        }
+
+        .header::before {
+            width: 260px;
+            height: 260px;
+            top: 18%;
+            right: 8%;
+            background: linear-gradient(135deg, rgba(29, 30, 136, 0.14), rgba(0, 180, 216, 0.12));
+        }
+
+        .header::after {
+            width: 180px;
+            height: 180px;
+            left: 5%;
+            bottom: 12%;
+            background: linear-gradient(135deg, rgba(91, 95, 240, 0.13), rgba(0, 180, 216, 0.11));
+            animation-delay: 1.5s;
+        }
+
+        .header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes floatShape {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-22px) rotate(8deg); }
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+            align-items: center;
+            gap: 54px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 17px;
+            border-radius: 999px;
+            color: var(--brand);
+            background: rgba(29, 30, 136, 0.08);
+            box-shadow: inset 0 0 0 1px rgba(29, 30, 136, 0.08);
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+
+        .hero-badge i {
+            color: var(--accent);
+        }
+
+        .header-title {
+            margin: 0 0 20px;
+            color: var(--ink);
+            line-height: 1.03;
+        }
+
+        .header-title .up,
+        .header-title .down {
+            display: block;
+        }
+
+        .header-title .up {
+            font-size: clamp(2.7rem, 7vw, 5.4rem);
+            font-weight: 950;
+            letter-spacing: -2px;
+        }
+
+        .header-title .down {
+            max-width: 720px;
+            font-size: clamp(2.05rem, 5.6vw, 4.35rem);
+            font-weight: 950;
+            letter-spacing: -1.7px;
+        }
+
+        .gradient-text {
+            color: transparent;
+            background: linear-gradient(90deg, var(--brand), var(--brand-2), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .header-subtitle {
+            max-width: 650px;
+            color: var(--text);
+            font-size: 1.13rem;
+            line-height: 1.85;
+            margin-bottom: 28px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn-creative,
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 13px 23px;
+            border-radius: 999px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .btn-creative {
+            color: var(--white) !important;
+            border: 0;
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+            box-shadow: 0 16px 36px rgba(29, 30, 136, 0.25);
+        }
+
+        .btn-creative:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 48px rgba(29, 30, 136, 0.30);
+        }
+
+        .btn-ghost {
+            color: var(--brand) !important;
+            background: var(--white);
+            border: 1px solid rgba(29, 30, 136, 0.16);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-ghost:hover {
+            color: var(--white) !important;
+            background: var(--brand);
+            transform: translateY(-4px);
+        }
+
+        .hero-card {
+            position: relative;
+            padding: 28px;
+            border-radius: var(--radius-xl);
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            will-change: transform;
+        }
+
+        .profile-orbit {
+            position: relative;
+            width: min(100%, 340px);
+            aspect-ratio: 1 / 1;
+            margin: 0 auto;
+            padding: 12px;
+            border-radius: 50%;
+            background: conic-gradient(from 140deg, var(--brand), var(--accent), var(--brand-2), var(--brand));
+        }
+
+        .profile-orbit img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 9px solid var(--white);
+            box-shadow: 0 18px 45px rgba(17, 19, 39, 0.16);
+        }
+
+        .orbit-pill {
+            position: absolute;
+            padding: 10px 14px;
+            color: var(--brand);
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            box-shadow: var(--shadow-sm);
+            font-size: 0.82rem;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        .orbit-pill.one { top: 17%; left: -28px; }
+        .orbit-pill.two { right: -25px; bottom: 24%; }
+        .orbit-pill.three { left: 50%; bottom: -12px; transform: translateX(-50%); }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 13px;
+            margin-top: 26px;
+        }
+
+        .stat-box {
+            padding: 15px 10px;
+            border-radius: 17px;
+            background: rgba(255, 255, 255, 0.76);
+            box-shadow: inset 0 0 0 1px rgba(29, 30, 136, 0.08);
+            text-align: center;
+        }
+
+        .stat-box strong {
+            display: block;
+            color: var(--brand);
+            font-size: 1.28rem;
+            line-height: 1;
+        }
+
+        .stat-box span {
+            display: block;
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 0.76rem;
+            font-weight: 700;
+        }
+
+        /* About */
+        .about {
+            display: grid;
+            grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
+            gap: 52px;
+            align-items: center;
+            text-align: left;
+        }
+
+        .about-img-holder {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-img-holder::before {
+            content: "";
+            position: absolute;
+            width: 86%;
+            height: 86%;
+            top: 8%;
+            border-radius: var(--radius-xl);
+            background: linear-gradient(135deg, rgba(29, 30, 136, 0.16), rgba(0, 180, 216, 0.13));
+            transform: rotate(-7deg);
+            z-index: -1;
+        }
+
+        .about-img {
+            width: min(100%, 385px);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow);
+            transform: rotate(2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .about-img:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .about-caption {
+            padding: 36px;
+            border-radius: var(--radius-xl);
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .about-text {
+            color: var(--text);
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 22px 0;
+        }
+
+        .highlight-chip {
+            padding: 13px 10px;
+            color: var(--brand);
+            background: rgba(29, 30, 136, 0.08);
+            border-radius: 16px;
+            font-size: 0.82rem;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        /* Tools */
+        .tool-card {
+            position: relative;
+            height: 100%;
+            padding: 28px 23px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .tool-card::after {
+            content: "";
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            right: -60px;
+            bottom: -60px;
+            border-radius: 50%;
+            background: rgba(29, 30, 136, 0.07);
+            transition: transform 0.32s ease, background 0.32s ease;
+        }
+
+        .tool-card:hover::after {
+            transform: scale(1.85);
+            background: rgba(0, 180, 216, 0.12);
+        }
+
+        .tool-card .icon {
+            position: relative;
+            z-index: 1;
+            width: 72px;
+            height: 72px;
+            object-fit: contain;
+            margin-bottom: 18px;
+            filter: drop-shadow(0 12px 18px rgba(17, 19, 39, 0.11));
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover .icon {
+            transform: translateY(-6px) rotate(-5deg) scale(1.08);
+        }
+
+        .tool-card .title,
+        .tool-card .subtitle {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tool-card .title {
+            color: var(--ink);
+            font-size: 1.05rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .tool-card .subtitle {
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* Experience */
+        .experience-wrapper {
+            position: relative;
+        }
+
+        .experience-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 52px;
+            left: 9%;
+            right: 9%;
+            height: 3px;
+            border-radius: 20px;
+            background: linear-gradient(90deg, var(--brand), var(--accent), var(--brand-2));
+            opacity: 0.24;
+        }
+
+        .experience-card {
+            position: relative;
+            height: 100%;
+            padding: 26px 19px 24px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .experience-card::before {
+            content: "";
+            position: absolute;
+            top: 44px;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--brand), var(--accent));
+            box-shadow: 0 0 0 8px rgba(29, 30, 136, 0.08);
+        }
+
+        .experience-logo {
+            width: 86px;
+            height: 86px;
+            object-fit: contain;
+            padding: 12px;
+            margin: 34px auto 18px;
+            border-radius: 22px;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease;
+        }
+
+        .experience-card:hover .experience-logo {
+            transform: scale(1.08) rotate(3deg);
+        }
+
+        .experience-card h3 {
+            color: var(--ink);
+            font-size: 1.05rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .credential-overlay h3 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin-bottom: 6px;
+        }
+
+        .experience-card .role {
+            min-height: 52px;
+            color: var(--text);
+            font-weight: 700;
+            line-height: 1.55;
+            margin-bottom: 12px;
+        }
+
+        .experience-card .date {
+            display: inline-block;
+            padding: 7px 12px;
+            color: var(--brand);
+            background: rgba(29, 30, 136, 0.08);
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 900;
+        }
+
+        /* Credentials */
+        .credential-card {
+            position: relative;
+            display: block;
+            height: 100%;
+            min-height: 220px;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .credential-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            transition: transform 0.45s ease, filter 0.45s ease;
+        }
+
+        .credential-card:hover img {
+            transform: scale(1.12) rotate(1.2deg);
+            filter: brightness(0.68);
+        }
+
+        .credential-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 22px;
+            color: var(--white);
+            background: linear-gradient(180deg, rgba(17, 19, 39, 0.05), rgba(29, 30, 136, 0.9));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .credential-card:hover .credential-overlay {
+            opacity: 1;
+        }
+
+        .credential-overlay h4 {
+            font-weight: 900;
+            margin-bottom: 6px;
+        }
+
+        .credential-overlay p {
+            color: rgba(255, 255, 255, 0.88);
+            margin-bottom: 0;
+        }
+
+        /* Blog */
+        .blog-card {
+            display: grid;
+            grid-template-columns: minmax(220px, 0.86fr) minmax(0, 1.14fr);
+            height: 100%;
+            overflow: hidden;
+            border-radius: var(--radius-xl);
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-sm);
+            text-align: left;
+            transition: transform 0.28s ease, box-shadow 0.28s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-9px);
+            box-shadow: var(--shadow);
+        }
+
+        .blog-card-header {
+            min-height: 260px;
+            overflow: hidden;
+        }
+
+        .blog-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s ease;
+        }
+
+        .blog-card:hover .blog-card-img {
+            transform: scale(1.08);
+        }
+
+        .blog-card-body {
+            padding: 30px;
+        }
+
+        .blog-card-title {
+            color: var(--ink);
+            font-weight: 900;
+            line-height: 1.35;
+            margin-bottom: 12px;
+        }
+
+        .blog-card-caption a,
+        .blog-card-link {
+            color: var(--brand);
+            font-weight: 900;
+        }
+
+        .blog-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blog-card-link:hover {
+            gap: 14px;
+            color: var(--brand-2);
+        }
+
+        /* Contact */
+        .contact-panel {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 44px 34px;
+            overflow: hidden;
+            border-radius: var(--radius-xl);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 255, 0.92));
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-panel::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            top: -100px;
+            right: -95px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(29, 30, 136, 0.12), rgba(0, 180, 216, 0.13));
+        }
+
+        .contact-panel > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info a {
+            color: var(--brand);
+            font-weight: 900;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            color: var(--brand);
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            font-size: 1.1rem;
+        }
+
+        .social-icon:hover {
+            color: var(--white);
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+            transform: translateY(-6px) rotate(4deg);
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            color: var(--white);
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+            border: 0;
+            border-radius: 50%;
+            box-shadow: 0 16px 35px rgba(29, 30, 136, 0.25);
+            cursor: pointer;
+        }
+
+        .back-to-top.visible {
+            display: flex;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .custom-navbar .container {
+                align-items: center;
+            }
+
+            .hamburger {
+                display: inline-flex;
+            }
+
+            .custom-navbar .nav {
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 15px;
+                right: 15px;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 6px;
+                padding: 12px;
+                background: rgba(255, 255, 255, 0.98);
+                border: 1px solid var(--line);
+                border-radius: 20px;
+                box-shadow: var(--shadow);
+            }
+
+            .custom-navbar .nav.show {
+                display: flex;
+            }
+
+            .custom-navbar .link {
+                width: 100%;
+                justify-content: flex-start;
+                padding: 14px 16px;
+            }
+
+            .hero-grid,
+            .about {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-card {
+                width: min(100%, 460px);
+                margin: 0 auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .about-caption {
+                text-align: center;
+            }
+
+            .experience-wrapper::before {
+                display: none;
+            }
+
+            .blog-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .section {
+                padding: 72px 0;
+            }
+
+            .header {
+                padding: 110px 0 65px;
+            }
+
+            .hero-stats,
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .orbit-pill {
+                display: none;
+            }
+
+            .profile-orbit {
+                width: min(100%, 285px);
+            }
+
+            .about-caption,
+            .contact-panel {
+                padding: 28px 22px;
+            }
+
+            .credential-card img {
+                height: 210px;
+            }
+
+            .blog-card-header {
+                min-height: 215px;
+            }
+        }
+    </style>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+<body data-spy="scroll" data-target=".custom-navbar" data-offset="80">
 
     <!-- Page Navbar -->
-    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20" aria-label="Primary navigation">
         <div class="container">
-            <a class="logo" href="#">Oshan Maharjan</a>
-            <ul class="nav">
-                <li class="item"><a class="link" href="#home">Home</a></li>
+            <a class="logo" href="#home">Oshan Maharjan</a>
+
+            <ul class="nav" id="siteNav">
+                <li class="item"><a class="link active" href="#home">Home</a></li>
                 <li class="item"><a class="link" href="#about">About</a></li>
+                <li class="item"><a class="link" href="#service">Tools</a></li>
                 <li class="item"><a class="link" href="#Experiences">Experiences</a></li>
                 <li class="item"><a class="link" href="#Credentials">Credentials</a></li>
                 <li class="item"><a class="link" href="#Blog">Blog</a></li>
                 <li class="item"><a class="link" href="#contact">Contact</a></li>
             </ul>
-            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic" aria-label="Toggle navigation" aria-controls="siteNav" aria-expanded="false">
                 <div class="hamburger-box">
                     <div class="hamburger-inner"></div>
                 </div>
@@ -37,47 +1004,88 @@
 
     <!-- Hero Header -->
     <header id="home" class="header">
-        <div class="overlay"></div>
-        <div class="header-content container">
-            <h1 class="header-title">
-                <span class="up">HI!</span>
-                <span class="down">I am a <span style="color: #1d1e88">Learner</span> & <span style="color: #1d1e88">Explorer</span></span>
-            </h1>
-            <p class="header-subtitle">#HR Professional | People Strategist</p>
-            <a href="#about">
-                <button class="btn-rounded btn btn-outline-primary mt-4">Learn More About Me</button>
-            </a>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-copy reveal">
+                    <div class="hero-badge">
+                        <i class="ti-star"></i>
+                        HR Leader • Strategic People Partner
+                    </div>
+
+                    <h1 class="header-title">
+                        <span class="up">HI!</span>
+                        <span class="down">I am a <span class="gradient-text">Learner</span> &amp; <span class="gradient-text">Explorer</span></span>
+                    </h1>
+
+                    <p class="header-subtitle">
+                        I build people-first systems, connect business goals with human potential, and keep exploring better ways to help teams grow.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#about" class="btn btn-creative">Explore My Story</a>
+                        <a href="#contact" class="btn btn-ghost">Let’s Connect</a>
+                    </div>
+                </div>
+
+                <div class="hero-card reveal">
+                    <div class="profile-orbit">
+                        <img src="assets/imgs/OshanDP.png" alt="Oshan Maharjan - HR Professional">
+                        <span class="orbit-pill one">People Strategy</span>
+                        <span class="orbit-pill two">HR Analytics</span>
+                        <span class="orbit-pill three">Growth Mindset</span>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-box">
+                            <strong>HR</strong>
+                            <span>Leadership</span>
+                        </div>
+                        <div class="stat-box">
+                            <strong>OD</strong>
+                            <span>Development</span>
+                        </div>
+                        <div class="stat-box">
+                            <strong>HRBP</strong>
+                            <span>Strategy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
     <!-- End of Hero Header -->
 
     <!-- About Section -->
-    <section class="section pt-5" id="about">
-        <div class="container text-center">
+    <section class="section" id="about">
+        <div class="container">
             <div class="about">
-                <div class="about-img-holder">
+                <div class="about-img-holder reveal">
                     <img src="assets/imgs/OshanDP.png" class="about-img" alt="Oshan Maharjan - HR Professional">
                 </div>
-                <div class="about-caption">
-                    <p class="section-subtitle">Who Am I ?</p>
-                    <h2 class="section-title mb-3">A Brief Introduction</h2>
+
+                <div class="about-caption reveal">
+                    <p class="section-subtitle">Who Am I?</p>
+                    <h2 class="section-title">A Brief Introduction</h2>
+
                     <p class="about-text">
-                        I always had a vision of rising as a dynamic professional from the very outset. 
-                        I started my early career as a recruiter and continued to explore every new project and role that came my way. 
-                        With progressive enthusiasm, I bring strong expertise in <strong>human resources, talent management, process analytics, strategic HR, and organizational development</strong>.
+                        I always had a vision of rising as a dynamic professional from the very outset. I started my early career as a recruiter and continued to explore every new project and role that came my way. With progressive enthusiasm, I bring strong expertise in <strong>human resources, talent management, process analytics, strategic HR, and organizational development</strong>.
                     </p>
+
                     <p class="about-text">
-                        I believe in achieving goals as a team and approach every challenge with a growth mindset — 
-                        creating value and learning opportunities for all stakeholders, never shying away from tough problems, 
-                        even when the odds seem slim.
+                        I believe in achieving goals as a team and approach every challenge with a growth mindset — creating value and learning opportunities for all stakeholders, never shying away from tough problems, even when the odds seem slim.
                     </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-chip">Talent Management</div>
+                        <div class="highlight-chip">Strategic HR</div>
+                        <div class="highlight-chip">People Analytics</div>
+                    </div>
+
                     <p class="about-text">
-                        Beyond work, I recharge through nature, e-gaming, and continuous learning — 
-                        a well-rounded perspective that fuels creativity and innovative thinking in professional spaces.
+                        Beyond work, I recharge through nature, e-gaming, and continuous learning — a well-rounded perspective that fuels creativity and innovative thinking in professional spaces.
                     </p>
-                    <a href="https://drive.google.com/u/1/uc?id=17b1NVBC5RBRDQdNa13y1RLa-s1RX7OGF&export=download" target="_blank">
-                        <button class="btn-rounded btn btn-outline-primary mt-4">Download My CV</button>
-                    </a>
+
+                    <a href="https://drive.google.com/u/1/uc?id=17b1NVBC5RBRDQdNa13y1RLa-s1RX7OGF&amp;export=download" target="_blank" rel="noopener" class="btn btn-creative mt-3">Download My CV</a>
                 </div>
             </div>
         </div>
@@ -87,43 +1095,42 @@
     <!-- Skills / Tools Section -->
     <section class="section" id="service">
         <div class="container text-center">
-            <p class="section-subtitle">Tools I Work With Comfortably</p>
-            <h6 class="section-title mb-6">Softwares & Platforms</h6>
+            <p class="section-subtitle reveal">Tools I Work With Comfortably</p>
+            <h2 class="section-title reveal">Softwares &amp; Platforms</h2>
+            <p class="section-intro reveal">
+                A blend of HR systems, productivity tools, analytics platforms, and creative software that helps me work smarter and communicate better.
+            </p>
+
             <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/MSO.png" alt="Microsoft Office" class="icon">
-                            <h6 class="title">MS Office Suite</h6>
-                            <p class="subtitle">Advanced Excel, PowerPoint, Word & Teams</p>
-                        </div>
+                <div class="col-md-6 col-lg-3 mb-4 reveal">
+                    <div class="creative-card tool-card">
+                        <img src="assets/imgs/MSO.png" alt="Microsoft Office" class="icon">
+                        <h3 class="title">MS Office Suite</h3>
+                        <p class="subtitle">Advanced Excel, PowerPoint, Word &amp; Teams</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/Adove.png" alt="Adobe Creative Suite" class="icon">
-                            <h6 class="title">Adobe Creative Tools</h6>
-                            <p class="subtitle">Photoshop, Illustrator, Lightroom, Acrobat</p>
-                        </div>
+
+                <div class="col-md-6 col-lg-3 mb-4 reveal">
+                    <div class="creative-card tool-card">
+                        <img src="assets/imgs/Adove.png" alt="Adobe Creative Suite" class="icon">
+                        <h3 class="title">Adobe Creative Tools</h3>
+                        <p class="subtitle">Photoshop, Illustrator, Lightroom, Acrobat</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/HRIS.png" alt="HR Systems" class="icon">
-                            <h6 class="title">HR Technologies</h6>
-                            <p class="subtitle">HRIS, HRMS, ATS, Payroll Systems</p>
-                        </div>
+
+                <div class="col-md-6 col-lg-3 mb-4 reveal">
+                    <div class="creative-card tool-card">
+                        <img src="assets/imgs/HRIS.png" alt="HR Systems" class="icon">
+                        <h3 class="title">HR Technologies</h3>
+                        <p class="subtitle">HRIS, HRMS, ATS, Payroll Systems</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/Filmora.png" alt="Video Editing" class="icon">
-                            <h6 class="title">Video & Audio Editing</h6>
-                            <p class="subtitle">Filmora, CapCut, Audacity & Similar Tools</p>
-                        </div>
+
+                <div class="col-md-6 col-lg-3 mb-4 reveal">
+                    <div class="creative-card tool-card">
+                        <img src="assets/imgs/Filmora.png" alt="Video Editing" class="icon">
+                        <h3 class="title">Video &amp; Audio Editing</h3>
+                        <p class="subtitle">Filmora, CapCut, Audacity &amp; Similar Tools</p>
                     </div>
                 </div>
             </div>
@@ -134,50 +1141,47 @@
     <!-- Experiences Section -->
     <section class="section" id="Experiences">
         <div class="container text-center">
-            <p class="section-subtitle">My Professional Journey</p>
-            <h6 class="section-title mb-6">Key Experiences</h6>
-            <div class="row">
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/CG.png" class="testimonial-card-img" alt="Chaudhary Group">
-                        </div>
-                        <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Head of Human Resources (Global)<br><span>Oct 2023 – Present</span></p>
-                            <h6 class="testimonial-card-title">Chaudhary Group</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/ABC Logo.jpg" class="testimonial-card-img" alt="ABC Corp">
-                        </div>
-                        <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">COO & Consultant<br><span>Sep 2022 – Present</span></p>
-                            <h6 class="testimonial-card-title">ABC Corp</h6>
+            <p class="section-subtitle reveal">My Professional Journey</p>
+            <h2 class="section-title reveal">Key Experiences</h2>
+            <p class="section-intro reveal">
+                From recruitment and sales to HR business partnering, consulting, operations, and global HR leadership.
+            </p>
+
+            <div class="experience-wrapper">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 mb-4 reveal">
+                        <div class="creative-card experience-card">
+                            <img src="assets/imgs/CG.png" class="experience-logo" alt="Chaudhary Group">
+                            <h3>Chaudhary Group</h3>
+                            <p class="role">Head of Human Resources<br>Global</p>
+                            <span class="date">Oct 2023 – Present</span>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/GG.png" class="testimonial-card-img" alt="Golyan Group">
-                        </div>
-                        <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">DM - Strategic Control | HRBP<br><span>Jan 2020 – Sep 2022</span></p>
-                            <h6 class="testimonial-card-title">Golyan Group</h6>
+
+                    <div class="col-md-6 col-lg-3 mb-4 reveal">
+                        <div class="creative-card experience-card">
+                            <img src="assets/imgs/ABC Logo.jpg" class="experience-logo" alt="ABC Corp">
+                            <h3>ABC Corp</h3>
+                            <p class="role">COO &amp; Consultant</p>
+                            <span class="date">Sep 2022 – Present</span>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/MJ.jpg" class="testimonial-card-img" alt="merojob">
+
+                    <div class="col-md-6 col-lg-3 mb-4 reveal">
+                        <div class="creative-card experience-card">
+                            <img src="assets/imgs/GG.png" class="experience-logo" alt="Golyan Group">
+                            <h3>Golyan Group</h3>
+                            <p class="role">DM - Strategic Control<br>HRBP</p>
+                            <span class="date">Jan 2020 – Sep 2022</span>
                         </div>
-                        <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Professional Recruiter & Sales<br><span>Feb 2017 – Jan 2020</span></p>
-                            <h6 class="testimonial-card-title">merojob</h6>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 mb-4 reveal">
+                        <div class="creative-card experience-card">
+                            <img src="assets/imgs/MJ.jpg" class="experience-logo" alt="merojob">
+                            <h3>merojob</h3>
+                            <p class="role">Professional Recruiter<br>&amp; Sales</p>
+                            <span class="date">Feb 2017 – Jan 2020</span>
                         </div>
                     </div>
                 </div>
@@ -189,73 +1193,52 @@
     <!-- Credentials Section -->
     <section class="section" id="Credentials">
         <div class="container text-center">
-            <p class="section-subtitle">Continuous Learner</p>
-            <h6 class="section-title mb-6">Recent Certifications & Courses</h6>
+            <p class="section-subtitle reveal">Continuous Learner</p>
+            <h2 class="section-title reveal">Recent Certifications &amp; Courses</h2>
+            <p class="section-intro reveal">
+                Selected certifications that reflect my interest in analytics, digital leadership, HR strategy, business partnering, and planning.
+            </p>
+
             <div class="row justify-content-center">
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <a href="https://simpli-web.app.link/e/702FjvGmIyb" target="_blank" class="portfolio-card">
-                        <img src="assets/imgs/BAexcel.png" class="portfolio-card-img" alt="Business Analytics with Excel">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Simplilearn</h4>
-                                <p>Business Analytics with Excel</p>
-                            </span>
-                        </span>
+                <div class="col-md-4 col-lg-3 mb-4 reveal">
+                    <a href="https://simpli-web.app.link/e/702FjvGmIyb" target="_blank" rel="noopener" class="credential-card">
+                        <img src="assets/imgs/BAexcel.png" alt="Business Analytics with Excel">
+                        <span class="credential-overlay"><span><h3>Simplilearn</h3><p>Business Analytics with Excel</p></span></span>
                     </a>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <a href="https://simpli-web.app.link/e/03lgHbmmIyb" target="_blank" class="portfolio-card">
-                        <img src="assets/imgs/DL.png" class="portfolio-card-img" alt="Digital Leadership">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Simplilearn</h4>
-                                <p>Digital Leadership</p>
-                            </span>
-                        </span>
+
+                <div class="col-md-4 col-lg-3 mb-4 reveal">
+                    <a href="https://simpli-web.app.link/e/03lgHbmmIyb" target="_blank" rel="noopener" class="credential-card">
+                        <img src="assets/imgs/DL.png" alt="Digital Leadership">
+                        <span class="credential-overlay"><span><h3>Simplilearn</h3><p>Digital Leadership</p></span></span>
                     </a>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <a href="https://simpli-web.app.link/e/EDS0RCCmIyb" target="_blank" class="portfolio-card">
-                        <img src="assets/imgs/PBI.png" class="portfolio-card-img" alt="Power BI">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Simplilearn</h4>
-                                <p>Power BI for Beginners</p>
-                            </span>
-                        </span>
+
+                <div class="col-md-4 col-lg-3 mb-4 reveal">
+                    <a href="https://simpli-web.app.link/e/EDS0RCCmIyb" target="_blank" rel="noopener" class="credential-card">
+                        <img src="assets/imgs/PBI.png" alt="Power BI">
+                        <span class="credential-overlay"><span><h3>Simplilearn</h3><p>Power BI for Beginners</p></span></span>
                     </a>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <a href="https://www.linkedin.com/learning/certificates/46f09c4ad973113fc69d800551c9de061db6be8035a2d4ecc041a30c89bfc0bf" target="_blank" class="portfolio-card">
-                        <img src="assets/imgs/SHRM.png" class="portfolio-card-img" alt="Strategic HR">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>LinkedIn Learning</h4>
-                                <p>Strategic Human Resources</p>
-                            </span>
-                        </span>
+
+                <div class="col-md-4 col-lg-3 mb-4 reveal">
+                    <a href="https://www.linkedin.com/learning/certificates/46f09c4ad973113fc69d800551c9de061db6be8035a2d4ecc041a30c89bfc0bf" target="_blank" rel="noopener" class="credential-card">
+                        <img src="assets/imgs/SHRM.png" alt="Strategic HR">
+                        <span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>Strategic Human Resources</p></span></span>
                     </a>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <a href="https://www.linkedin.com/learning/certificates/191b2193b329a1ccf9c33407178eb1f6bfe68337f24aa58abe4c1b59d45cc001" target="_blank" class="portfolio-card">
-                        <img src="assets/imgs/HRBP.png" class="portfolio-card-img" alt="HR Business Partner">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>LinkedIn Learning</h4>
-                                <p>HR Business Partner</p>
-                            </span>
-                        </span>
+
+                <div class="col-md-4 col-lg-3 mb-4 reveal">
+                    <a href="https://www.linkedin.com/learning/certificates/191b2193b329a1ccf9c33407178eb1f6bfe68337f24aa58abe4c1b59d45cc001" target="_blank" rel="noopener" class="credential-card">
+                        <img src="assets/imgs/HRBP.png" alt="HR Business Partner">
+                        <span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>HR Business Partner</p></span></span>
                     </a>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <a href="https://www.linkedin.com/learning/certificates/aeee7a2a01e81e012328d6f0d39c55f9ecb4d029a87c68890de799d61737a862" target="_blank" class="portfolio-card">
-                        <img src="assets/imgs/Splan.png" class="portfolio-card-img" alt="Strategic Planning">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>LinkedIn Learning</h4>
-                                <p>Strategic Planning Foundations</p>
-                            </span>
-                        </span>
+
+                <div class="col-md-4 col-lg-3 mb-4 reveal">
+                    <a href="https://www.linkedin.com/learning/certificates/aeee7a2a01e81e012328d6f0d39c55f9ecb4d029a87c68890de799d61737a862" target="_blank" rel="noopener" class="credential-card">
+                        <img src="assets/imgs/Splan.png" alt="Strategic Planning">
+                        <span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>Strategic Planning Foundations</p></span></span>
                     </a>
                 </div>
             </div>
@@ -266,42 +1249,45 @@
     <!-- Blog Section -->
     <section class="section" id="Blog">
         <div class="container text-center">
-            <p class="section-subtitle">Thoughts & Insights</p>
-            <h6 class="section-title mb-6">From My Blog</h6>
+            <p class="section-subtitle reveal">Thoughts &amp; Insights</p>
+            <h2 class="section-title reveal">From My Blog</h2>
+            <p class="section-intro reveal">
+                Reflections on career growth, personal branding, balance, and the human side of professional success.
+            </p>
+
             <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="blog-card">
+                <div class="col-md-6 mb-4 reveal">
+                    <article class="blog-card">
                         <div class="blog-card-header">
                             <img src="assets/imgs/b1.jpg" class="blog-card-img" alt="Personal Branding">
                         </div>
+
                         <div class="blog-card-body">
-                            <h5 class="blog-card-title">How to Build A Strong Personal Brand for Career Success?</h5>
+                            <h3 class="blog-card-title">How to Build A Strong Personal Brand for Career Success?</h3>
                             <p class="blog-card-caption">
-                                <a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank">By ABC Corp Nepal</a>
+                                <a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank" rel="noopener">By ABC Corp Nepal</a>
                             </p>
-                            <p>In today's competitive world, personal branding isn't optional — it's essential...</p>
-                            <a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank" class="blog-card-link">
-                                Read more <i class="ti-angle-double-right"></i>
-                            </a>
+                            <p>In today's competitive world, personal branding isn't optional — it's essential for building credibility, visibility, and long-term career opportunity.</p>
+                            <a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
                         </div>
-                    </div>
+                    </article>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="blog-card">
+
+                <div class="col-md-6 mb-4 reveal">
+                    <article class="blog-card">
                         <div class="blog-card-header">
                             <img src="assets/imgs/b2.jpg" class="blog-card-img" alt="Work-Life Balance">
                         </div>
+
                         <div class="blog-card-body">
-                            <h5 class="blog-card-title">Is Work-Life Balance a Myth, Cycle, or Achievement?</h5>
+                            <h3 class="blog-card-title">Is Work-Life Balance a Myth, Cycle, or Achievement?</h3>
                             <p class="blog-card-caption">
-                                <a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank">By ABC Corp Nepal</a>
+                                <a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank" rel="noopener">By ABC Corp Nepal</a>
                             </p>
-                            <p>Is perfect balance possible? Or is it about rhythm, seasons, and conscious choices?...</p>
-                            <a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank" class="blog-card-link">
-                                Read more <i class="ti-angle-double-right"></i>
-                            </a>
+                            <p>Is perfect balance possible? Or is it about rhythm, seasons, and conscious choices that help us sustain performance and well-being?</p>
+                            <a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -311,30 +1297,135 @@
     <!-- Contact Section -->
     <section class="section" id="contact">
         <div class="container text-center">
-            <h6 class="section-title mb-4">Let's Connect</h6>
-            <p class="mb-4">
-                I love connecting with driven, self-motivated, and like-minded professionals.<br>
-                Feel free to reach out — I’m always open to meaningful conversations.
-            </p>
-            <p class="contact-info mb-5">
-                <strong>+977 9823583937</strong> | 
-                <a href="mailto:oshanmhr@gmail.com">oshanmhr@gmail.com</a>
-            </p>
+            <div class="contact-panel reveal">
+                <h2 class="section-title mb-4">Let's Connect</h2>
 
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/oshan-maharjan-hr/" target="_blank" class="social-icon"><i class="ti-linkedin"></i></a>
-                <a href="https://www.facebook.com/oshan.kong" target="_blank" class="social-icon"><i class="ti-facebook"></i></a>
-                <a href="https://twitter.com/ccoc2134" target="_blank" class="social-icon"><i class="ti-twitter-alt"></i></a>
-                <a href="https://www.instagram.com/oshan_mhrzn/" target="_blank" class="social-icon"><i class="ti-instagram"></i></a>
+                <p class="mb-4">
+                    I love connecting with driven, self-motivated, and like-minded professionals.<br>
+                    Feel free to reach out — I’m always open to meaningful conversations.
+                </p>
+
+                <p class="contact-info mb-5">
+                    <strong>+977 9823583937</strong> |
+                    <a href="mailto:oshanmhr@gmail.com">oshanmhr@gmail.com</a>
+                </p>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/oshan-maharjan-hr/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="ti-linkedin"></i></a>
+                    <a href="https://www.facebook.com/oshan.kong" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook"><i class="ti-facebook"></i></a>
+                    <a href="https://twitter.com/ccoc2134" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter"><i class="ti-twitter-alt"></i></a>
+                    <a href="https://www.instagram.com/oshan_mhrzn/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><i class="ti-instagram"></i></a>
+                </div>
             </div>
         </div>
     </section>
     <!-- End of Contact -->
+
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+        <i class="ti-angle-up"></i>
+    </button>
 
     <!-- Scripts -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
     <script src="assets/js/meyawo.js"></script>
+
+    <script>
+        (function () {
+            'use strict';
+
+            const navToggle = document.getElementById('nav-toggle');
+            const siteNav = document.getElementById('siteNav');
+            const navLinks = document.querySelectorAll('.custom-navbar .link');
+            const sections = document.querySelectorAll('header[id], section[id]');
+            const backToTop = document.getElementById('backToTop');
+            const revealElements = document.querySelectorAll('.reveal');
+            const heroCard = document.querySelector('.hero-card');
+
+            if (navToggle && siteNav) {
+                navToggle.addEventListener('click', function () {
+                    const isOpen = siteNav.classList.toggle('show');
+                    navToggle.classList.toggle('is-active', isOpen);
+                    navToggle.setAttribute('aria-expanded', String(isOpen));
+                });
+
+                navLinks.forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        siteNav.classList.remove('show');
+                        navToggle.classList.remove('is-active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            function setActiveNav() {
+                let currentId = 'home';
+                const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+                sections.forEach(function (section) {
+                    const sectionTop = section.offsetTop - 120;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        currentId = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(function (link) {
+                    const isCurrent = link.getAttribute('href') === '#' + currentId;
+                    link.classList.toggle('active', isCurrent);
+                });
+
+                if (backToTop) {
+                    backToTop.classList.toggle('visible', scrollPosition > 650);
+                }
+            }
+
+            window.addEventListener('scroll', setActiveNav, { passive: true });
+            window.addEventListener('load', setActiveNav);
+            setActiveNav();
+
+            if ('IntersectionObserver' in window) {
+                const revealObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('show');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.14 });
+
+                revealElements.forEach(function (element) {
+                    revealObserver.observe(element);
+                });
+            } else {
+                revealElements.forEach(function (element) {
+                    element.classList.add('show');
+                });
+            }
+
+            if (heroCard && window.matchMedia('(hover: hover)').matches) {
+                heroCard.addEventListener('mousemove', function (event) {
+                    const rect = heroCard.getBoundingClientRect();
+                    const x = event.clientX - rect.left;
+                    const y = event.clientY - rect.top;
+                    const rotateY = ((x / rect.width) - 0.5) * 10;
+                    const rotateX = ((y / rect.height) - 0.5) * -10;
+                    heroCard.style.transform = 'perspective(900px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-8px)';
+                });
+
+                heroCard.addEventListener('mouseleave', function () {
+                    heroCard.style.transform = '';
+                });
+            }
+
+            if (backToTop) {
+                backToTop.addEventListener('click', function () {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        }());
+    </script>
 </body>
 </html>
