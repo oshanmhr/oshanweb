@@ -3,656 +3,651 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Oshan Maharjan - HR Leader | Strategic People Partner | Learner & Explorer">
+    <meta name="description" content="Oshan Maharjan - HR Leader, Strategic People Partner, learner, explorer, and people-first transformation professional.">
     <meta name="author" content="Oshan Maharjan">
-    <title>Oshan Maharjan | HR Professional & Strategic Leader</title>
+    <meta name="theme-color" content="#1d1e88">
+    <meta property="og:title" content="Oshan Maharjan | HR Leader & Strategic People Partner">
+    <meta property="og:description" content="People-first HR leadership, strategy, analytics, organizational development, and continuous learning.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/imgs/OshanDP.png">
+    <title>Oshan Maharjan | HR Leader & Strategic People Partner</title>
 
-    <!-- Font Icons -->
+    <link rel="preload" as="image" href="assets/imgs/OshanDP.png">
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <!-- Bootstrap + Meyawo Main Styles -->
     <link rel="stylesheet" href="assets/css/meyawo.css">
 
     <style>
         :root {
             --primary: #1d1e88;
-            --primary-light: #4f46e5;
+            --primary-2: #4f46e5;
             --secondary: #00b4d8;
             --accent: #7c3aed;
-            --ink: #111327;
-            --text: #51546c;
-            --muted: #777a92;
-            --light: #f6f8ff;
-            --white: #ffffff;
-            --border: rgba(29, 30, 136, 0.12);
-            --shadow: 0 24px 70px rgba(17, 19, 39, 0.12);
-            --shadow-soft: 0 14px 36px rgba(17, 19, 39, 0.08);
-            --radius-xl: 30px;
+            --accent-2: #f97316;
+            --ink: #101225;
+            --text: #4f5369;
+            --muted: #777b92;
+            --surface: rgba(255, 255, 255, 0.86);
+            --surface-strong: #ffffff;
+            --soft: #f5f7ff;
+            --border: rgba(29, 30, 136, 0.13);
+            --shadow: 0 28px 80px rgba(17, 19, 39, 0.16);
+            --shadow-soft: 0 14px 38px rgba(17, 19, 39, 0.09);
+            --radius-xl: 32px;
             --radius-lg: 22px;
             --radius-md: 16px;
-            --navbar-height: 76px;
+            --nav-height: 76px;
         }
 
-        * {
-            box-sizing: border-box;
+        [data-theme="dark"] {
+            --ink: #f8f9ff;
+            --text: #d5d8ea;
+            --muted: #a8adc5;
+            --surface: rgba(20, 24, 49, 0.78);
+            --surface-strong: #151931;
+            --soft: #0f1328;
+            --border: rgba(255, 255, 255, 0.12);
+            --shadow: 0 28px 90px rgba(0, 0, 0, 0.35);
+            --shadow-soft: 0 14px 42px rgba(0, 0, 0, 0.22);
         }
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 92px;
-        }
-
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 96px; }
         body {
             margin: 0;
+            min-height: 100vh;
             color: var(--text);
             background:
-                radial-gradient(circle at 10% 10%, rgba(29, 30, 136, 0.10), transparent 30%),
-                radial-gradient(circle at 88% 12%, rgba(0, 180, 216, 0.12), transparent 28%),
-                linear-gradient(180deg, #ffffff 0%, #f8f9ff 46%, #ffffff 100%);
+                radial-gradient(circle at var(--mx, 18%) var(--my, 18%), rgba(0, 180, 216, 0.16), transparent 24rem),
+                radial-gradient(circle at 86% 8%, rgba(124, 58, 237, 0.16), transparent 21rem),
+                linear-gradient(180deg, #ffffff 0%, #f7f8ff 44%, #ffffff 100%);
             overflow-x: hidden;
+            transition: background 0.35s ease, color 0.35s ease;
+        }
+
+        [data-theme="dark"] body,
+        body[data-theme="dark"] {
+            background:
+                radial-gradient(circle at var(--mx, 18%) var(--my, 18%), rgba(0, 180, 216, 0.15), transparent 25rem),
+                radial-gradient(circle at 86% 8%, rgba(124, 58, 237, 0.22), transparent 24rem),
+                linear-gradient(180deg, #080b19 0%, #10152c 48%, #090c1b 100%);
         }
 
         body::before {
             content: "";
             position: fixed;
             inset: 0;
-            z-index: -2;
+            z-index: -3;
             pointer-events: none;
             background-image:
-                linear-gradient(rgba(29, 30, 136, 0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(29, 30, 136, 0.035) 1px, transparent 1px);
-            background-size: 46px 46px;
+                linear-gradient(rgba(29, 30, 136, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(29, 30, 136, 0.045) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: linear-gradient(180deg, rgba(0,0,0,.92), rgba(0,0,0,.34));
         }
 
-        a, button {
-            transition: all 0.25s ease;
+        [data-theme="dark"] body::before,
+        body[data-theme="dark"]::before {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
         }
 
-        a:hover {
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
+        a, button, input { transition: all 0.24s ease; }
+        a:hover { text-decoration: none; }
+        img { display: block; max-width: 100%; }
+        button { font-family: inherit; }
+        ::selection { color: #fff; background: var(--primary); }
 
         .skip-link {
             position: fixed;
             top: 12px;
             left: 12px;
-            z-index: 2000;
-            padding: 10px 14px;
-            color: var(--white);
+            z-index: 3000;
+            padding: 10px 15px;
+            color: #fff;
             background: var(--primary);
             border-radius: 999px;
-            transform: translateY(-140%);
+            transform: translateY(-150%);
+        }
+        .skip-link:focus { transform: translateY(0); outline: 3px solid rgba(0,180,216,.45); }
+
+        .progress-line {
+            position: fixed;
+            inset: 0 auto auto 0;
+            z-index: 1500;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--accent-2));
+            box-shadow: 0 0 18px rgba(0, 180, 216, 0.4);
         }
 
-        .skip-link:focus {
-            transform: translateY(0);
-            outline: 3px solid rgba(0, 180, 216, 0.45);
-        }
-
-        .touch-target {
-            min-width: 44px;
-            min-height: 44px;
+        .cursor-spotlight {
+            position: fixed;
+            inset: auto;
+            left: 0;
+            top: 0;
+            width: 240px;
+            height: 240px;
+            z-index: -1;
+            pointer-events: none;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,180,216,.18), transparent 62%);
+            transform: translate3d(-50%, -50%, 0);
+            opacity: 0;
+            transition: opacity .25s ease;
         }
 
         .section {
             position: relative;
-            padding: 92px 0;
+            padding: 96px 0;
         }
-
         .section-subtitle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
             color: var(--primary);
-            font-size: 0.78rem;
-            font-weight: 900;
-            letter-spacing: 1.4px;
+            font-size: .78rem;
+            font-weight: 950;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 10px;
         }
-
+        .section-subtitle::before,
+        .section-subtitle::after {
+            content: "";
+            width: 22px;
+            height: 2px;
+            border-radius: 99px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
         .section-title {
+            margin: 0 0 18px;
             color: var(--ink);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 900;
-            letter-spacing: -1px;
-            margin-bottom: 18px;
+            font-size: clamp(2rem, 4.2vw, 3.25rem);
+            font-weight: 950;
+            line-height: 1.08;
+            letter-spacing: -1.2px;
         }
-
         .section-intro {
-            max-width: 760px;
+            max-width: 770px;
             margin: 0 auto 42px;
             color: var(--muted);
-            line-height: 1.8;
+            line-height: 1.82;
         }
 
-        .creative-card {
-            background: rgba(255, 255, 255, 0.92);
+        .glass-card {
+            background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-soft);
-            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
         }
-
-        .creative-card:hover {
-            transform: translateY(-9px);
-            border-color: rgba(29, 30, 136, 0.24);
+        .lift-card {
+            transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+            transform-style: preserve-3d;
+        }
+        .lift-card:hover,
+        .lift-card:focus-within {
+            transform: translateY(-10px);
+            border-color: rgba(0,180,216,.35);
             box-shadow: var(--shadow);
         }
 
-        /* Animated Navigation */
-        .nav-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1200;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-            box-shadow: 0 0 18px rgba(0, 180, 216, 0.45);
-            transition: width 0.12s linear;
+        .btn-creative,
+        .btn-ghost,
+        .btn-micro {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 46px;
+            border-radius: 999px;
+            font-weight: 950;
+            line-height: 1;
+            border: 0;
+            cursor: pointer;
         }
+        .btn-creative {
+            padding: 14px 24px;
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            box-shadow: 0 18px 38px rgba(29, 30, 136, 0.25);
+        }
+        .btn-creative:hover,
+        .btn-creative:focus { color: #fff; transform: translateY(-4px); box-shadow: 0 24px 52px rgba(29, 30, 136, 0.32); }
+        .btn-ghost {
+            padding: 13px 22px;
+            color: var(--primary);
+            background: var(--surface-strong);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-soft);
+        }
+        .btn-ghost:hover,
+        .btn-ghost:focus { color: #fff; background: var(--primary); transform: translateY(-4px); }
+        .btn-micro {
+            padding: 11px 15px;
+            color: var(--primary);
+            background: rgba(29,30,136,.07);
+            border: 1px solid rgba(29,30,136,.1);
+        }
+        .btn-micro:hover { color: #fff; background: var(--primary); }
 
         .custom-navbar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 1100;
+            z-index: 1400;
             padding: 14px 0;
-            background: rgba(255, 255, 255, 0.88);
-            border-bottom: 1px solid rgba(29, 30, 136, 0.08);
-            box-shadow: 0 10px 32px rgba(17, 19, 39, 0.06);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            transition: padding 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+            background: rgba(255,255,255,.84);
+            border-bottom: 1px solid rgba(29,30,136,.08);
+            box-shadow: 0 12px 36px rgba(17,19,39,.06);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
-
-        .custom-navbar.scrolled {
-            padding: 9px 0;
-            background: rgba(255, 255, 255, 0.96);
-            box-shadow: 0 18px 42px rgba(17, 19, 39, 0.10);
-        }
-
-        .custom-navbar .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 18px;
-        }
-
-        .custom-navbar .logo {
+        [data-theme="dark"] .custom-navbar { background: rgba(10,13,28,.78); border-color: rgba(255,255,255,.08); }
+        .custom-navbar.scrolled { padding: 9px 0; box-shadow: 0 18px 46px rgba(17,19,39,.14); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+        .logo {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 11px;
             color: var(--primary);
-            font-size: 1.06rem;
-            font-weight: 900;
-            letter-spacing: -0.3px;
+            font-weight: 950;
+            letter-spacing: -.25px;
             white-space: nowrap;
         }
-
-        .custom-navbar .logo::before {
-            content: "";
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
+        .logo-mark {
+            display: inline-grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            color: #fff;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            box-shadow: 0 0 0 6px rgba(29, 30, 136, 0.08);
-            animation: pulseDot 2.2s ease-in-out infinite;
+            border-radius: 15px;
+            box-shadow: 0 0 0 7px rgba(29,30,136,.08);
         }
-
-        @keyframes pulseDot {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.22); }
-        }
-
-        .nav-wrap {
+        .nav-actions { display: flex; align-items: center; gap: 10px; }
+        .nav-menu {
             position: relative;
             display: flex;
             align-items: center;
-        }
-
-        .custom-navbar .nav {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 6px;
+            gap: 5px;
             margin: 0;
             padding: 5px;
             list-style: none;
-            border: 1px solid rgba(29, 30, 136, 0.08);
+            background: rgba(255,255,255,.62);
+            border: 1px solid var(--border);
             border-radius: 999px;
-            background: rgba(255, 255, 255, 0.66);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
         }
-
-        .custom-navbar .item {
-            margin: 0;
-            padding: 0;
-        }
-
-        .custom-navbar .link {
+        [data-theme="dark"] .nav-menu { background: rgba(255,255,255,.04); }
+        .nav-link-pill {
             position: relative;
             z-index: 2;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             min-height: 38px;
-            padding: 9px 14px;
+            padding: 9px 13px;
             color: var(--ink);
             border-radius: 999px;
-            font-size: 0.88rem;
-            font-weight: 850;
-            line-height: 1;
-            opacity: 0.76;
+            font-size: .84rem;
+            font-weight: 900;
+            opacity: .76;
             white-space: nowrap;
         }
-
-        .custom-navbar .link:hover,
-        .custom-navbar .link.active {
-            color: var(--white);
-            opacity: 1;
-        }
-
+        .nav-link-pill:hover,
+        .nav-link-pill.active { color: #fff; opacity: 1; }
         .nav-indicator {
             position: absolute;
             top: 5px;
             left: 5px;
+            z-index: 1;
             height: 38px;
             width: 0;
-            border-radius: 999px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            box-shadow: 0 12px 28px rgba(29, 30, 136, 0.25);
-            transition: transform 0.32s cubic-bezier(.2,.9,.2,1), width 0.32s cubic-bezier(.2,.9,.2,1), opacity 0.22s ease;
             opacity: 0;
-            z-index: 1;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            box-shadow: 0 14px 30px rgba(29,30,136,.24);
+            transition: transform .32s cubic-bezier(.2,.9,.2,1), width .32s cubic-bezier(.2,.9,.2,1), opacity .2s ease;
         }
-
-        .hamburger {
-            display: none;
-            position: relative;
+        .theme-toggle,
+        .menu-toggle {
+            display: inline-grid;
+            place-items: center;
             width: 46px;
             height: 46px;
-            align-items: center;
-            justify-content: center;
-            border: 0;
-            border-radius: 15px;
-            background: rgba(29, 30, 136, 0.08);
+            color: var(--primary);
+            background: rgba(29,30,136,.08);
+            border: 1px solid rgba(29,30,136,.08);
+            border-radius: 16px;
             cursor: pointer;
         }
-
-        .hamburger span,
-        .hamburger span::before,
-        .hamburger span::after {
+        .theme-toggle:hover,
+        .menu-toggle:hover { transform: translateY(-3px); background: rgba(29,30,136,.13); }
+        .menu-toggle { display: none; }
+        .menu-toggle span,
+        .menu-toggle span::before,
+        .menu-toggle span::after {
             content: "";
             position: absolute;
             width: 22px;
             height: 2px;
             border-radius: 20px;
             background: var(--primary);
-            transition: transform 0.28s ease, opacity 0.22s ease, top 0.28s ease;
+            transition: transform .25s ease, opacity .2s ease, top .25s ease;
         }
+        .menu-toggle span::before { top: -7px; }
+        .menu-toggle span::after { top: 7px; }
+        .menu-toggle.is-active span { transform: rotate(45deg); }
+        .menu-toggle.is-active span::before { top: 0; transform: rotate(90deg); }
+        .menu-toggle.is-active span::after { top: 0; opacity: 0; }
 
-        .hamburger span::before { top: -7px; }
-        .hamburger span::after { top: 7px; }
-        .hamburger.is-active span { transform: rotate(45deg); }
-        .hamburger.is-active span::before { top: 0; transform: rotate(90deg); }
-        .hamburger.is-active span::after { top: 0; opacity: 0; }
-
-        /* Hero */
         .header {
             position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 130px 0 82px;
+            padding: 132px 0 76px;
             overflow: hidden;
-            background:
-                radial-gradient(circle at 18% 28%, rgba(29, 30, 136, 0.12), transparent 28%),
-                radial-gradient(circle at 82% 32%, rgba(0, 180, 216, 0.16), transparent 26%);
         }
-
-        .header::before,
-        .header::after {
-            content: "";
+        .hero-noise {
             position: absolute;
-            border-radius: 50%;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 18% 24%, rgba(29,30,136,.13), transparent 24rem),
+                radial-gradient(circle at 82% 30%, rgba(0,180,216,.16), transparent 22rem);
+        }
+        .floating-shape {
+            position: absolute;
             z-index: 0;
+            border-radius: 999px;
+            filter: blur(.1px);
+            opacity: .8;
             animation: floatShape 8s ease-in-out infinite;
         }
-
-        .header::before {
-            width: 260px;
-            height: 260px;
-            top: 18%;
-            right: 8%;
-            background: linear-gradient(135deg, rgba(29, 30, 136, 0.14), rgba(0, 180, 216, 0.12));
-        }
-
-        .header::after {
-            width: 180px;
-            height: 180px;
-            left: 5%;
-            bottom: 12%;
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.13), rgba(0, 180, 216, 0.11));
-            animation-delay: 1.5s;
-        }
-
-        @keyframes floatShape {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-24px) rotate(8deg); }
-        }
+        .shape-1 { width: 240px; height: 240px; top: 18%; right: 8%; background: linear-gradient(135deg, rgba(29,30,136,.14), rgba(0,180,216,.12)); }
+        .shape-2 { width: 150px; height: 150px; left: 5%; bottom: 16%; background: linear-gradient(135deg, rgba(124,58,237,.14), rgba(249,115,22,.10)); animation-delay: 1.2s; }
+        .shape-3 { width: 78px; height: 78px; right: 38%; bottom: 14%; background: rgba(0,180,216,.12); animation-delay: 2.2s; }
+        @keyframes floatShape { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-24px) rotate(9deg); } }
 
         .hero-grid {
             position: relative;
             z-index: 1;
             display: grid;
-            grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+            grid-template-columns: minmax(0, 1.08fr) minmax(330px, .92fr);
             align-items: center;
-            gap: 48px;
+            gap: 50px;
         }
-
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 10px 18px;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
+            padding: 10px 17px;
             color: var(--primary);
-            background: rgba(29, 30, 136, 0.08);
-            border: 1px solid rgba(29, 30, 136, 0.08);
+            background: rgba(29,30,136,.08);
+            border: 1px solid rgba(29,30,136,.10);
             border-radius: 999px;
-            font-weight: 900;
+            font-weight: 950;
         }
-
         .hero-badge i { color: var(--secondary); }
-
         .header-title {
-            line-height: 1.02;
-            margin-bottom: 20px;
-        }
-
-        .header-title .up,
-        .header-title .down {
-            display: block;
+            margin: 0 0 20px;
             color: var(--ink);
             font-weight: 950;
-            letter-spacing: -2px;
+            line-height: 1.02;
+            letter-spacing: -2.4px;
         }
-
-        .header-title .up { font-size: clamp(2.6rem, 6vw, 5.3rem); }
-        .header-title .down { font-size: clamp(2.1rem, 5vw, 4.6rem); }
-
+        .header-title .hello { display: block; font-size: clamp(2.7rem, 6vw, 5.6rem); }
+        .header-title .role { display: block; font-size: clamp(2.05rem, 4.8vw, 4.55rem); }
         .gradient-text {
+            color: transparent;
             background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent;
         }
-
+        .typing-caret::after {
+            content: "";
+            display: inline-block;
+            width: .09em;
+            height: .86em;
+            margin-left: .08em;
+            background: var(--secondary);
+            animation: blink 1s steps(2, start) infinite;
+            vertical-align: -.08em;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
         .header-subtitle {
-            max-width: 650px;
+            max-width: 675px;
+            margin: 0 0 28px;
             color: var(--text);
             font-size: 1.12rem;
-            line-height: 1.8;
-            margin-bottom: 28px;
+            line-height: 1.84;
         }
-
-        .hero-actions {
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+        .hero-quickbar {
             display: flex;
             flex-wrap: wrap;
-            gap: 14px;
+            gap: 10px;
+            margin-top: 24px;
+        }
+        .quick-chip {
+            display: inline-flex;
             align-items: center;
-        }
-
-        .btn-creative,
-        .btn-ghost {
+            gap: 8px;
+            padding: 10px 13px;
+            color: var(--ink);
+            background: var(--surface);
+            border: 1px solid var(--border);
             border-radius: 999px;
-            padding: 13px 24px;
-            font-weight: 900;
-            letter-spacing: 0.15px;
+            box-shadow: 0 8px 22px rgba(17,19,39,.06);
+            font-weight: 850;
+            font-size: .86rem;
         }
+        .quick-chip i { color: var(--primary); }
 
-        .btn-creative {
-            color: var(--white);
-            border: 0;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            box-shadow: 0 16px 36px rgba(29, 30, 136, 0.24);
-        }
-
-        .btn-creative:hover {
-            color: var(--white);
-            transform: translateY(-4px);
-            box-shadow: 0 22px 45px rgba(29, 30, 136, 0.30);
-        }
-
-        .btn-ghost {
-            color: var(--primary);
-            background: var(--white);
-            border: 1px solid rgba(29, 30, 136, 0.16);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .btn-ghost:hover {
-            color: var(--white);
-            background: var(--primary);
-            transform: translateY(-4px);
-        }
-
-        .hero-card {
+        .hero-stage {
             position: relative;
             padding: 28px;
-            border-radius: var(--radius-xl);
-            background: rgba(255, 255, 255, 0.78);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            transform-style: preserve-3d;
-            animation: heroCardFloat 6s ease-in-out infinite;
+            overflow: hidden;
         }
-
-        @keyframes heroCardFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
+        .hero-stage::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            z-index: -1;
+            background: conic-gradient(from var(--angle, 0deg), var(--primary), var(--secondary), var(--accent), var(--primary));
+            opacity: .28;
+            animation: spin 9s linear infinite;
         }
-
+        @property --angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+        @keyframes spin { to { --angle: 360deg; } }
         .profile-orbit {
             position: relative;
-            width: min(100%, 340px);
+            width: min(100%, 350px);
             aspect-ratio: 1;
             margin: 0 auto;
-            padding: 12px;
+            padding: 13px;
             border-radius: 50%;
-            background: conic-gradient(from 140deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+            background: conic-gradient(from 130deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+            box-shadow: 0 20px 55px rgba(29,30,136,.18);
         }
-
         .profile-orbit img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border: 9px solid var(--white);
+            border: 9px solid var(--surface-strong);
             border-radius: 50%;
-            box-shadow: 0 18px 45px rgba(17, 19, 39, 0.16);
+            box-shadow: 0 20px 45px rgba(17,19,39,.17);
         }
-
         .orbit-pill {
             position: absolute;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
             padding: 10px 14px;
             color: var(--primary);
-            background: var(--white);
+            background: var(--surface-strong);
+            border: 1px solid var(--border);
             border-radius: 999px;
             box-shadow: var(--shadow-soft);
-            font-size: 0.84rem;
-            font-weight: 900;
+            font-size: .83rem;
+            font-weight: 950;
             white-space: nowrap;
+            animation: pillBob 4.8s ease-in-out infinite;
         }
-
-        .orbit-pill.one { top: 18%; left: -34px; }
-        .orbit-pill.two { right: -32px; bottom: 22%; }
-        .orbit-pill.three { left: 50%; bottom: -14px; transform: translateX(-50%); }
+        .orbit-pill.one { top: 16%; left: -34px; }
+        .orbit-pill.two { right: -36px; bottom: 23%; animation-delay: .8s; }
+        .orbit-pill.three { left: 50%; bottom: -16px; transform: translateX(-50%); animation-delay: 1.5s; }
+        @keyframes pillBob { 0%,100% { margin-top: 0; } 50% { margin-top: -10px; } }
 
         .hero-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 14px;
-            margin-top: 26px;
+            margin-top: 28px;
         }
-
         .stat-box {
-            padding: 16px 12px;
+            padding: 17px 12px;
             text-align: center;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.78);
-            box-shadow: inset 0 0 0 1px rgba(29, 30, 136, 0.08);
+            background: rgba(255,255,255,.72);
+            border: 1px solid var(--border);
+            border-radius: 19px;
         }
-
-        .stat-box strong {
+        [data-theme="dark"] .stat-box { background: rgba(255,255,255,.05); }
+        .stat-box strong { display: block; color: var(--primary); font-size: 1.4rem; line-height: 1; }
+        .stat-box span { display: block; margin-top: 6px; color: var(--muted); font-size: .78rem; font-weight: 800; }
+        .visitor-play-card {
+            margin-top: 18px;
+            padding: 18px;
+            border-radius: 22px;
+            background: rgba(29,30,136,.07);
+            border: 1px solid rgba(29,30,136,.1);
+        }
+        .play-card-title { display: flex; align-items: center; gap: 9px; margin-bottom: 10px; color: var(--ink); font-weight: 950; }
+        .play-meter {
+            height: 9px;
+            overflow: hidden;
+            border-radius: 99px;
+            background: rgba(29,30,136,.13);
+        }
+        .play-meter span {
             display: block;
-            color: var(--primary);
-            font-size: 1.34rem;
-            line-height: 1;
+            width: 72%;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            animation: meterPulse 3.2s ease-in-out infinite;
         }
+        @keyframes meterPulse { 0%,100% { width: 58%; } 50% { width: 92%; } }
+        .play-card-text { margin: 10px 0 0; color: var(--muted); font-size: .9rem; line-height: 1.65; }
 
-        .stat-box span {
-            display: block;
-            margin-top: 6px;
-            color: var(--muted);
-            font-size: 0.78rem;
-        }
-
-        /* About */
-        .about {
+        .about-grid {
             display: grid;
-            grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
-            gap: 50px;
+            grid-template-columns: minmax(280px,.86fr) minmax(0,1.14fr);
+            gap: 52px;
             align-items: center;
         }
-
-        .about-img-holder {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .about-img-holder::before {
+        .about-portrait { position: relative; display: flex; justify-content: center; }
+        .about-portrait::before {
             content: "";
             position: absolute;
             width: 84%;
             height: 84%;
-            border-radius: var(--radius-xl);
-            background: linear-gradient(135deg, rgba(29, 30, 136, 0.15), rgba(0, 180, 216, 0.12));
-            transform: rotate(-8deg);
             z-index: -1;
+            border-radius: var(--radius-xl);
+            background: linear-gradient(135deg, rgba(29,30,136,.16), rgba(0,180,216,.13));
+            transform: rotate(-8deg);
         }
-
         .about-img {
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow);
             transform: rotate(2deg);
-            transition: transform 0.35s ease;
         }
-
-        .about-img:hover { transform: rotate(0deg) scale(1.02); }
-
-        .about-caption {
-            padding: 36px;
-            border-radius: var(--radius-xl);
-            background: rgba(255, 255, 255, 0.74);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-soft);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-        }
-
-        .about-text {
-            color: var(--text);
-            line-height: 1.9;
-        }
-
-        .about-highlights {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin: 22px 0;
-        }
-
+        .about-portrait:hover .about-img { transform: rotate(0deg) scale(1.02); }
+        .about-card { padding: clamp(28px, 4vw, 40px); }
+        .about-text { color: var(--text); line-height: 1.9; }
+        .highlight-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 24px 0; }
         .highlight-chip {
+            display: grid;
+            place-items: center;
+            min-height: 62px;
             padding: 13px 12px;
-            text-align: center;
             color: var(--primary);
-            background: rgba(29, 30, 136, 0.07);
-            border-radius: 16px;
-            font-size: 0.83rem;
-            font-weight: 900;
+            background: rgba(29,30,136,.075);
+            border: 1px solid rgba(29,30,136,.08);
+            border-radius: 17px;
+            font-weight: 950;
+            text-align: center;
         }
 
-        /* Tools */
-        .tool-card {
+        .interactive-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: -28px;
             position: relative;
-            height: 100%;
-            padding: 28px 24px;
-            overflow: hidden;
+            z-index: 3;
         }
+        .mini-panel {
+            padding: 21px 18px;
+            text-align: center;
+            cursor: default;
+        }
+        .mini-panel i { color: var(--primary); font-size: 1.65rem; }
+        .mini-panel strong { display: block; margin-top: 12px; color: var(--ink); font-size: 1.02rem; }
+        .mini-panel span { display: block; margin-top: 5px; color: var(--muted); font-size: .84rem; line-height: 1.45; }
 
+        .tool-card { position: relative; height: 100%; padding: 30px 24px; overflow: hidden; }
         .tool-card::after {
             content: "";
             position: absolute;
-            width: 130px;
-            height: 130px;
-            right: -60px;
-            bottom: -60px;
+            right: -58px;
+            bottom: -58px;
+            width: 132px;
+            height: 132px;
             border-radius: 50%;
-            background: rgba(29, 30, 136, 0.07);
-            transition: transform 0.32s ease, background 0.32s ease;
+            background: rgba(29,30,136,.07);
+            transition: transform .33s ease, background .33s ease;
         }
-
-        .tool-card:hover::after {
-            transform: scale(1.85);
-            background: rgba(0, 180, 216, 0.12);
-        }
-
+        .tool-card:hover::after { transform: scale(1.85); background: rgba(0,180,216,.13); }
         .tool-card .icon {
             position: relative;
             z-index: 1;
-            width: 72px;
-            height: 72px;
+            width: 74px;
+            height: 74px;
             object-fit: contain;
             margin: 0 auto 18px;
-            filter: drop-shadow(0 12px 18px rgba(17, 19, 39, 0.11));
-            transition: transform 0.3s ease;
+            filter: drop-shadow(0 13px 18px rgba(17,19,39,.12));
         }
-
-        .tool-card:hover .icon { transform: translateY(-6px) rotate(-5deg) scale(1.08); }
+        .tool-card:hover .icon { transform: translateY(-7px) rotate(-5deg) scale(1.08); }
         .tool-card .title, .tool-card .subtitle { position: relative; z-index: 1; }
-        .tool-card .title { color: var(--ink); font-size: 1.05rem; font-weight: 900; margin-bottom: 10px; }
-        .tool-card .subtitle { color: var(--muted); line-height: 1.7; margin-bottom: 0; }
+        .tool-card .title { margin-bottom: 10px; color: var(--ink); font-size: 1.06rem; font-weight: 950; }
+        .tool-card .subtitle { margin-bottom: 0; color: var(--muted); line-height: 1.72; }
 
-        /* Experience */
         .experience-wrapper { position: relative; }
         .experience-wrapper::before {
             content: "";
             position: absolute;
             top: 52px;
-            left: 9%;
-            right: 9%;
+            left: 8%;
+            right: 8%;
             height: 3px;
             border-radius: 20px;
             background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-            opacity: 0.24;
+            opacity: .25;
         }
-
         .experience-card {
             position: relative;
             height: 100%;
-            padding: 26px 19px 24px;
-            text-align: center;
+            padding: 27px 20px 25px;
             overflow: hidden;
+            text-align: center;
         }
-
         .experience-card::before {
             content: "";
             position: absolute;
@@ -663,209 +658,109 @@
             border-radius: 50%;
             transform: translateX(-50%);
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            box-shadow: 0 0 0 8px rgba(29, 30, 136, 0.08);
+            box-shadow: 0 0 0 8px rgba(29,30,136,.08);
         }
-
         .experience-logo {
-            width: 86px;
-            height: 86px;
+            width: 88px;
+            height: 88px;
             object-fit: contain;
+            margin: 35px auto 18px;
             padding: 12px;
-            margin: 34px auto 18px;
-            border-radius: 22px;
-            background: var(--white);
+            background: #fff;
+            border-radius: 23px;
             box-shadow: var(--shadow-soft);
-            transition: transform 0.3s ease;
         }
-
         .experience-card:hover .experience-logo { transform: scale(1.08) rotate(3deg); }
-        .experience-card h3 { color: var(--ink); font-size: 1.05rem; font-weight: 900; margin-bottom: 10px; }
-        .experience-card .role { min-height: 52px; color: var(--text); font-weight: 700; line-height: 1.55; margin-bottom: 12px; }
-        .experience-card .date { display: inline-block; padding: 7px 12px; color: var(--primary); background: rgba(29, 30, 136, 0.08); border-radius: 999px; font-size: 0.76rem; font-weight: 900; }
+        .experience-card h3 { margin-bottom: 10px; color: var(--ink); font-size: 1.08rem; font-weight: 950; }
+        .experience-card .role { min-height: 52px; margin-bottom: 12px; color: var(--text); font-weight: 750; line-height: 1.55; }
+        .experience-card .date { display: inline-block; padding: 7px 12px; color: var(--primary); background: rgba(29,30,136,.08); border-radius: 999px; font-size: .76rem; font-weight: 950; }
 
-        /* Credentials */
         .credential-card {
             position: relative;
             display: block;
             height: 100%;
-            min-height: 220px;
+            min-height: 222px;
             overflow: hidden;
+            background: var(--surface-strong);
+            border: 1px solid var(--border);
             border-radius: var(--radius-lg);
-            background: var(--white);
             box-shadow: var(--shadow-soft);
         }
-
-        .credential-card img {
-            width: 100%;
-            height: 230px;
-            object-fit: cover;
-            transition: transform 0.45s ease, filter 0.45s ease;
-        }
-
-        .credential-card:hover img {
-            transform: scale(1.12) rotate(1.2deg);
-            filter: brightness(0.68);
-        }
-
+        .credential-card img { width: 100%; height: 230px; object-fit: cover; transition: transform .45s ease, filter .45s ease; }
         .credential-overlay {
             position: absolute;
             inset: 0;
             display: flex;
             align-items: flex-end;
             padding: 22px;
-            color: var(--white);
-            background: linear-gradient(180deg, rgba(17, 19, 39, 0.05), rgba(29, 30, 136, 0.9));
+            color: #fff;
+            background: linear-gradient(180deg, rgba(17,19,39,.03), rgba(29,30,136,.92));
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity .28s ease;
         }
+        .credential-card:hover img, .credential-card:focus img { transform: scale(1.12) rotate(1.2deg); filter: brightness(.68); }
+        .credential-card:hover .credential-overlay, .credential-card:focus .credential-overlay { opacity: 1; }
+        .credential-overlay h3 { margin-bottom: 6px; font-size: 1.25rem; font-weight: 950; }
+        .credential-overlay p { margin: 0; color: rgba(255,255,255,.88); }
 
-        .credential-card:hover .credential-overlay { opacity: 1; }
-        .credential-overlay h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 6px; }
-        .credential-overlay p { color: rgba(255, 255, 255, 0.88); margin-bottom: 0; }
-
-        /* Blog - mobile-first, filterable, no overlapping text/images */
         .blog-toolbar {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
             gap: 14px;
-            max-width: 1040px;
+            max-width: 1060px;
             margin: 0 auto 24px;
             padding: 14px;
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            background: rgba(255, 255, 255, 0.86);
-            box-shadow: var(--shadow-soft);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
         }
-
-        .blog-search {
-            position: relative;
-            flex: 1 1 280px;
-        }
-
-        .blog-search i {
-            position: absolute;
-            top: 50%;
-            left: 16px;
-            color: var(--primary);
-            transform: translateY(-50%);
-            pointer-events: none;
-        }
-
+        .blog-search { position: relative; flex: 1 1 280px; }
+        .blog-search i { position: absolute; left: 16px; top: 50%; color: var(--primary); transform: translateY(-50%); pointer-events: none; }
         .blog-search input {
             width: 100%;
             min-height: 48px;
             padding: 12px 16px 12px 43px;
             color: var(--ink);
-            border: 1px solid rgba(29, 30, 136, 0.12);
+            background: var(--surface-strong);
+            border: 1px solid rgba(29,30,136,.12);
             border-radius: 999px;
-            background: var(--white);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
-            font-weight: 750;
+            font-weight: 800;
             outline: none;
         }
-
-        .blog-search input:focus {
-            border-color: rgba(29, 30, 136, 0.38);
-            box-shadow: 0 0 0 4px rgba(29, 30, 136, 0.08);
-        }
-
-        .blog-filters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            gap: 8px;
-        }
-
+        .blog-search input:focus { border-color: rgba(29,30,136,.42); box-shadow: 0 0 0 4px rgba(29,30,136,.08); }
+        .blog-filters { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
         .blog-filter {
             min-height: 44px;
             padding: 10px 15px;
             color: var(--primary);
-            border: 1px solid rgba(29, 30, 136, 0.14);
+            background: rgba(29,30,136,.07);
+            border: 1px solid rgba(29,30,136,.14);
             border-radius: 999px;
-            background: rgba(29, 30, 136, 0.06);
-            font-weight: 900;
+            font-weight: 950;
             cursor: pointer;
         }
-
-        .blog-filter:hover,
-        .blog-filter.active {
-            color: var(--white);
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            box-shadow: 0 12px 26px rgba(29, 30, 136, 0.20);
-        }
-
-        .blog-result-count {
-            max-width: 1040px;
-            margin: 0 auto 18px;
-            color: var(--muted);
-            font-size: 0.9rem;
-            font-weight: 800;
-            text-align: left;
-        }
-
-        .blog-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 28px;
-            max-width: 1040px;
-            margin: 0 auto;
-        }
-
+        .blog-filter:hover, .blog-filter.active { color: #fff; background: linear-gradient(135deg, var(--primary), var(--primary-2)); box-shadow: 0 12px 26px rgba(29,30,136,.2); }
+        .blog-result-count { max-width: 1060px; margin: 0 auto 18px; color: var(--muted); font-size: .9rem; font-weight: 850; text-align: left; }
+        .blog-list { display: grid; grid-template-columns: 1fr; gap: 28px; max-width: 1060px; margin: 0 auto; }
         .blog-card {
             position: relative;
             display: grid;
-            grid-template-columns: minmax(280px, 0.94fr) minmax(0, 1.06fr);
+            grid-template-columns: minmax(280px,.94fr) minmax(0,1.06fr);
             align-items: stretch;
             width: 100%;
-            min-height: 310px;
+            min-height: 312px;
             overflow: hidden;
-            border-radius: var(--radius-xl);
-            background: rgba(255, 255, 255, 0.94);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-soft);
             text-align: left;
             isolation: isolate;
-            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
         }
-
-        .blog-card:hover,
-        .blog-card:focus-within {
-            transform: translateY(-9px);
-            border-color: rgba(29, 30, 136, 0.24);
-            box-shadow: var(--shadow);
-        }
-
-        .blog-card.hide {
-            display: none;
-        }
-
+        .blog-card.hide { display: none; }
         .blog-card-media {
             position: relative;
-            min-height: 310px;
+            min-height: 312px;
             overflow: hidden;
-            background:
-                linear-gradient(135deg, rgba(29, 30, 136, 0.78), rgba(0, 180, 216, 0.68)),
-                var(--light);
+            background: linear-gradient(135deg, rgba(29,30,136,.78), rgba(0,180,216,.68)), var(--soft);
         }
-
-        .blog-card-img {
-            width: 100%;
-            height: 100%;
-            min-height: 310px;
-            object-fit: cover;
-            transition: transform 0.5s ease, filter 0.5s ease;
-        }
-
-        .blog-card:hover .blog-card-img,
-        .blog-card:focus-within .blog-card-img {
-            transform: scale(1.06);
-            filter: saturate(1.08);
-        }
-
+        .blog-card-img { width: 100%; height: 100%; min-height: 312px; object-fit: cover; transition: transform .5s ease, filter .5s ease; }
+        .blog-card:hover .blog-card-img, .blog-card:focus-within .blog-card-img { transform: scale(1.06); filter: saturate(1.08); }
         .blog-badge {
             position: absolute;
             left: 18px;
@@ -875,146 +770,103 @@
             align-items: center;
             gap: 8px;
             padding: 9px 13px;
-            color: var(--white);
-            background: rgba(17, 19, 39, 0.72);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #fff;
+            background: rgba(17,19,39,.72);
+            border: 1px solid rgba(255,255,255,.18);
             border-radius: 999px;
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            font-size: 0.78rem;
-            font-weight: 900;
+            font-size: .78rem;
+            font-weight: 950;
         }
-
         .blog-card-body {
-            position: relative;
-            z-index: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             min-width: 0;
             padding: clamp(26px, 4vw, 42px);
         }
+        .blog-card-title { margin: 0 0 14px; color: var(--ink); font-size: clamp(1.35rem, 2vw, 1.85rem); font-weight: 950; line-height: 1.28; overflow-wrap: anywhere; }
+        .blog-card-caption { display: flex; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 14px; color: var(--muted); font-size: .92rem; font-weight: 850; }
+        .blog-card-caption a { color: var(--primary); font-weight: 950; }
+        .blog-card-text { margin-bottom: 22px; color: var(--text); line-height: 1.82; }
+        .blog-card-link { align-self: flex-start; }
+        .empty-blog-state { display: none; max-width: 720px; margin: 0 auto; padding: 30px; color: var(--muted); border: 1px dashed rgba(29,30,136,.2); border-radius: var(--radius-lg); font-weight: 850; }
+        .empty-blog-state.show { display: block; }
 
-        .blog-card-title {
+        .playground {
+            position: relative;
+            overflow: hidden;
+            padding: clamp(30px, 5vw, 48px);
+            text-align: center;
+        }
+        .playground-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 28px;
+        }
+        .play-button {
+            min-height: 120px;
+            padding: 20px;
             color: var(--ink);
-            font-size: clamp(1.35rem, 2vw, 1.85rem);
-            font-weight: 950;
-            line-height: 1.28;
-            margin: 0 0 14px;
-            overflow-wrap: anywhere;
+            background: var(--surface-strong);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: var(--shadow-soft);
+            cursor: pointer;
+            text-align: left;
+        }
+        .play-button i { color: var(--primary); font-size: 1.7rem; }
+        .play-button strong { display: block; margin-top: 13px; color: var(--ink); }
+        .play-button span { display: block; margin-top: 5px; color: var(--muted); font-size: .88rem; line-height: 1.5; }
+        .play-button:hover { transform: translateY(-7px) rotate(-1deg); border-color: rgba(0,180,216,.35); }
+        .insight-output {
+            min-height: 72px;
+            margin-top: 22px;
+            padding: 18px 20px;
+            color: var(--ink);
+            background: rgba(29,30,136,.07);
+            border: 1px solid rgba(29,30,136,.1);
+            border-radius: 22px;
+            font-weight: 850;
+            line-height: 1.65;
         }
 
-        .blog-card-caption {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px 12px;
-            margin-bottom: 14px;
-            color: var(--muted);
-            font-size: 0.92rem;
-            font-weight: 800;
-        }
-
-        .blog-card-caption a {
-            color: var(--primary);
-            font-weight: 900;
-        }
-
-        .blog-card-text {
-            color: var(--text);
-            line-height: 1.8;
-            margin-bottom: 22px;
-        }
-
-        .blog-card-link {
-            display: inline-flex;
-            align-items: center;
-            align-self: flex-start;
-            gap: 9px;
-            min-height: 44px;
-            padding: 11px 16px;
-            color: var(--primary);
-            background: rgba(29, 30, 136, 0.07);
-            border-radius: 999px;
-            font-weight: 900;
-        }
-
-        .blog-card-link:hover,
-        .blog-card-link:focus {
-            gap: 15px;
-            color: var(--white);
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            outline: none;
-        }
-
-        .empty-blog-state {
-            display: none;
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 30px;
-            color: var(--muted);
-            border: 1px dashed rgba(29, 30, 136, 0.20);
-            border-radius: var(--radius-lg);
-            background: rgba(255, 255, 255, 0.78);
-            font-weight: 800;
-        }
-
-        .empty-blog-state.show {
-            display: block;
-        }
-
-        /* Contact */
         .contact-panel {
             position: relative;
-            max-width: 900px;
+            max-width: 920px;
             margin: 0 auto;
-            padding: 44px 34px;
+            padding: clamp(34px, 5vw, 48px) clamp(24px, 4vw, 38px);
             overflow: hidden;
-            border-radius: var(--radius-xl);
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(247, 248, 255, 0.92));
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
+            text-align: center;
         }
-
         .contact-panel::before {
             content: "";
             position: absolute;
-            width: 220px;
-            height: 220px;
-            top: -100px;
-            right: -95px;
+            width: 240px;
+            height: 240px;
+            top: -112px;
+            right: -100px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(29, 30, 136, 0.12), rgba(0, 180, 216, 0.13));
+            background: linear-gradient(135deg, rgba(29,30,136,.13), rgba(0,180,216,.14));
         }
-
         .contact-panel > * { position: relative; z-index: 1; }
-        .contact-info a { color: var(--primary); font-weight: 900; }
-
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 14px;
-        }
-
+        .contact-info a { color: var(--primary); font-weight: 950; }
+        .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
         .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
+            display: inline-grid;
+            place-items: center;
+            width: 50px;
+            height: 50px;
             color: var(--primary);
-            background: var(--white);
+            background: var(--surface-strong);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 17px;
             box-shadow: var(--shadow-soft);
-            font-size: 1.1rem;
+            font-size: 1.12rem;
         }
-
-        .social-icon:hover {
-            color: var(--white);
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            transform: translateY(-6px) rotate(4deg);
-        }
+        .social-icon:hover { color: #fff; background: linear-gradient(135deg, var(--primary), var(--accent)); transform: translateY(-6px) rotate(4deg); }
+        .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 26px 0 28px; }
 
         .back-to-top {
             position: fixed;
@@ -1022,54 +874,49 @@
             bottom: 22px;
             z-index: 999;
             display: none;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            color: var(--white);
+            place-items: center;
+            width: 50px;
+            height: 50px;
+            color: #fff;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             border: 0;
             border-radius: 50%;
-            box-shadow: 0 16px 35px rgba(29, 30, 136, 0.25);
+            box-shadow: 0 16px 35px rgba(29,30,136,.25);
             cursor: pointer;
         }
-
-        .back-to-top.visible { display: flex; }
+        .back-to-top.visible { display: grid; }
         .back-to-top:hover { transform: translateY(-5px); }
-
-        /* Reveal animation */
-        .reveal {
+        .toast-note {
+            position: fixed;
+            left: 50%;
+            bottom: 26px;
+            z-index: 1600;
+            max-width: min(92vw, 420px);
+            padding: 13px 17px;
+            color: #fff;
+            background: rgba(17,19,39,.92);
+            border-radius: 999px;
+            box-shadow: var(--shadow);
             opacity: 0;
-            transform: translateY(32px);
-            transition: opacity 0.65s ease, transform 0.65s ease;
+            transform: translate(-50%, 24px);
+            pointer-events: none;
         }
+        .toast-note.show { opacity: 1; transform: translate(-50%, 0); }
 
-        .reveal.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal { opacity: 0; transform: translateY(32px); transition: opacity .65s ease, transform .65s ease; }
+        .reveal.show { opacity: 1; transform: translateY(0); }
 
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                scroll-behavior: auto !important;
-                animation: none !important;
-                transition: none !important;
-            }
+            *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
             .reveal { opacity: 1; transform: none; }
+            .cursor-spotlight { display: none; }
         }
-
         @media (max-width: 1199px) {
-            .custom-navbar .link { padding-inline: 11px; font-size: 0.84rem; }
+            .nav-link-pill { padding-inline: 10px; font-size: .8rem; }
         }
-
         @media (max-width: 991px) {
-            .hamburger { display: inline-flex; }
-
-            .nav-wrap {
-                position: static;
-            }
-
-            .custom-navbar .nav {
+            .menu-toggle { display: inline-grid; position: relative; }
+            .nav-menu {
                 position: absolute;
                 top: calc(100% + 10px);
                 left: 15px;
@@ -1081,522 +928,286 @@
                 max-height: 0;
                 padding: 0 12px;
                 overflow: hidden;
-                background: rgba(255, 255, 255, 0.98);
-                border: 1px solid var(--border);
+                background: var(--surface-strong);
                 border-radius: 22px;
                 box-shadow: var(--shadow);
                 opacity: 0;
-                transform: translateY(-8px) scale(0.98);
+                transform: translateY(-8px) scale(.98);
                 pointer-events: none;
-                transition: max-height 0.35s ease, opacity 0.28s ease, transform 0.28s ease, padding 0.28s ease;
+                transition: max-height .35s ease, opacity .28s ease, transform .28s ease, padding .28s ease;
             }
-
-            .custom-navbar .nav.show {
-                max-height: 430px;
-                padding: 12px;
-                opacity: 1;
-                transform: translateY(0) scale(1);
-                pointer-events: auto;
-            }
-
-            .custom-navbar .nav-indicator { display: none; }
-            .custom-navbar .link {
-                width: 100%;
-                justify-content: flex-start;
-                min-height: 45px;
-                padding: 14px 16px;
-            }
-            .custom-navbar .link:hover,
-            .custom-navbar .link.active {
-                color: var(--primary);
-                background: rgba(29, 30, 136, 0.08);
-            }
-
-            .hero-grid,
-            .about {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-card { width: min(100%, 460px); margin: 0 auto; }
-            .hero-actions { justify-content: center; }
-            .about-caption { text-align: center; }
+            .nav-menu.show { max-height: 500px; padding: 12px; opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+            .nav-indicator { display: none; }
+            .nav-link-pill { width: 100%; justify-content: flex-start; min-height: 45px; padding: 14px 16px; }
+            .nav-link-pill:hover, .nav-link-pill.active { color: var(--primary); background: rgba(29,30,136,.08); }
+            .hero-grid, .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-stage { width: min(100%, 470px); margin: 0 auto; }
+            .hero-actions, .hero-quickbar { justify-content: center; }
+            .about-card { text-align: center; }
             .experience-wrapper::before { display: none; }
             .blog-card { grid-template-columns: 1fr; min-height: auto; }
-            .blog-card-media, .blog-card-img { min-height: 250px; }
-            .blog-card-body { justify-content: flex-start; }
+            .blog-card-media, .blog-card-img { min-height: 252px; }
+            .interactive-strip, .playground-grid { grid-template-columns: repeat(2, 1fr); }
         }
-
         @media (max-width: 767px) {
-            .section { padding: 72px 0; }
-            .header { padding: 112px 0 65px; }
-            .hero-stats, .about-highlights { grid-template-columns: 1fr; }
+            .section { padding: 74px 0; }
+            .header { padding: 116px 0 64px; }
+            .header-title { letter-spacing: -1.5px; }
+            .hero-stats, .highlight-grid, .interactive-strip, .playground-grid { grid-template-columns: 1fr; }
             .orbit-pill { display: none; }
-            .profile-orbit { width: min(100%, 285px); }
-            .about-caption, .contact-panel { padding: 28px 22px; }
-            .credential-card img { height: 210px; }
+            .profile-orbit { width: min(100%, 288px); }
             .blog-toolbar { align-items: stretch; padding: 12px; border-radius: 20px; }
             .blog-filters { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }
             .blog-filter { flex: 0 0 auto; }
             .blog-result-count { text-align: center; }
             .blog-list { gap: 22px; }
-            .blog-card { border-radius: 22px; }
             .blog-card-media, .blog-card-img { min-height: 220px; }
             .blog-card-body { padding: 24px; }
-            .blog-card-link { width: 100%; justify-content: center; }
+            .blog-card-link { width: 100%; }
+            .contact-info { line-height: 1.8; }
         }
     </style>
 </head>
-
-<body data-spy="scroll" data-target=".custom-navbar" data-offset="80">
+<body>
     <a href="#main-content" class="skip-link">Skip to content</a>
-    <div class="nav-progress" id="navProgress" aria-hidden="true"></div>
+    <div class="progress-line" id="progressLine" aria-hidden="true"></div>
+    <div class="cursor-spotlight" id="cursorSpotlight" aria-hidden="true"></div>
 
-    <!-- Page Navbar -->
     <nav class="custom-navbar" id="mainNavbar" aria-label="Primary navigation">
-        <div class="container">
-            <a class="logo" href="#home">Oshan Maharjan</a>
+        <div class="container nav-inner">
+            <a class="logo" href="#home" aria-label="Oshan Maharjan home">
+                <span class="logo-mark">OM</span>
+                <span>Oshan Maharjan</span>
+            </a>
 
-            <div class="nav-wrap">
-                <ul class="nav" id="siteNav">
-                    <li class="item"><a class="link active" href="#home">Home</a></li>
-                    <li class="item"><a class="link" href="#about">About</a></li>
-                    <li class="item"><a class="link" href="#service">Tools</a></li>
-                    <li class="item"><a class="link" href="#Experiences">Experiences</a></li>
-                    <li class="item"><a class="link" href="#Credentials">Credentials</a></li>
-                    <li class="item"><a class="link" href="#Blog">Blog</a></li>
-                    <li class="item"><a class="link" href="#contact">Contact</a></li>
-                    <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
-                </ul>
+            <ul class="nav-menu" id="siteNav">
+                <li><a class="nav-link-pill active" href="#home">Home</a></li>
+                <li><a class="nav-link-pill" href="#about">About</a></li>
+                <li><a class="nav-link-pill" href="#service">Tools</a></li>
+                <li><a class="nav-link-pill" href="#Experiences">Experiences</a></li>
+                <li><a class="nav-link-pill" href="#Credentials">Credentials</a></li>
+                <li><a class="nav-link-pill" href="#Blog">Blog</a></li>
+                <li><a class="nav-link-pill" href="#contact">Contact</a></li>
+                <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+            </ul>
+
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="ti-light-bulb"></i></button>
+                <button type="button" class="menu-toggle" id="navToggle" aria-label="Toggle navigation" aria-controls="siteNav" aria-expanded="false"><span></span></button>
             </div>
-
-            <button type="button" id="nav-toggle" class="hamburger touch-target" aria-label="Toggle navigation" aria-controls="siteNav" aria-expanded="false">
-                <span></span>
-            </button>
         </div>
     </nav>
-    <!-- End of Page Navbar -->
 
-    <!-- Hero Header -->
     <main id="main-content" tabindex="-1">
-    <header id="home" class="header">
+        <header id="home" class="header">
+            <div class="hero-noise"></div>
+            <span class="floating-shape shape-1" aria-hidden="true"></span>
+            <span class="floating-shape shape-2" aria-hidden="true"></span>
+            <span class="floating-shape shape-3" aria-hidden="true"></span>
+
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-copy reveal">
+                        <div class="hero-badge"><i class="ti-star"></i> HR Leader • Strategic People Partner</div>
+                        <h1 class="header-title">
+                            <span class="hello">Hi, I’m Oshan.</span>
+                            <span class="role">I am a <span class="gradient-text typing-caret" id="roleRotator">Learner</span></span>
+                        </h1>
+                        <p class="header-subtitle">
+                            I build people-first systems, connect business goals with human potential, and keep exploring better ways to help teams grow, perform, and feel valued.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#about" class="btn-creative"><i class="ti-map-alt"></i> Explore My Story</a>
+                            <a href="#contact" class="btn-ghost"><i class="ti-comment-alt"></i> Let’s Connect</a>
+                            <button type="button" class="btn-ghost" id="surpriseMe"><i class="ti-wand"></i> Surprise Me</button>
+                        </div>
+                        <div class="hero-quickbar" aria-label="Key strengths">
+                            <span class="quick-chip"><i class="ti-pulse"></i> HR Strategy</span>
+                            <span class="quick-chip"><i class="ti-bar-chart"></i> People Analytics</span>
+                            <span class="quick-chip"><i class="ti-world"></i> Global HR</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-stage glass-card lift-card reveal" id="heroStage">
+                        <div class="profile-orbit">
+                            <img src="assets/imgs/OshanDP.png" alt="Oshan Maharjan - HR Professional">
+                            <span class="orbit-pill one"><i class="ti-user"></i> People Strategy</span>
+                            <span class="orbit-pill two"><i class="ti-bar-chart-alt"></i> HR Analytics</span>
+                            <span class="orbit-pill three"><i class="ti-bolt"></i> Growth Mindset</span>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-box"><strong>HR</strong><span>Leadership</span></div>
+                            <div class="stat-box"><strong>OD</strong><span>Development</span></div>
+                            <div class="stat-box"><strong>HRBP</strong><span>Strategy</span></div>
+                        </div>
+                        <div class="visitor-play-card">
+                            <div class="play-card-title"><i class="ti-game"></i> Visitor energy meter</div>
+                            <div class="play-meter" aria-hidden="true"><span></span></div>
+                            <p class="play-card-text" id="energyText">Move around, click things, filter blogs, and explore. This page is designed to reward curiosity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
         <div class="container">
-            <div class="hero-grid">
-                <div class="hero-copy reveal">
-                    <div class="hero-badge">
-                        <i class="ti-star"></i>
-                        HR Leader • Strategic People Partner
+            <div class="interactive-strip">
+                <div class="mini-panel glass-card lift-card reveal"><i class="ti-compass"></i><strong>Curious Explorer</strong><span>Learning-driven and open to new challenges.</span></div>
+                <div class="mini-panel glass-card lift-card reveal"><i class="ti-target"></i><strong>Strategic Partner</strong><span>Aligning people decisions with business outcomes.</span></div>
+                <div class="mini-panel glass-card lift-card reveal"><i class="ti-dashboard"></i><strong>Data-Informed</strong><span>Blending intuition with analytics and systems.</span></div>
+                <div class="mini-panel glass-card lift-card reveal"><i class="ti-heart"></i><strong>People-First</strong><span>Building workplaces where people can grow.</span></div>
+            </div>
+        </div>
+
+        <section class="section" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-portrait reveal">
+                        <img src="assets/imgs/OshanDP.png" class="about-img" alt="Oshan Maharjan - HR Professional">
                     </div>
-
-                    <h1 class="header-title">
-                        <span class="up">HI!</span>
-                        <span class="down">I am a <span class="gradient-text">Learner</span> &amp; <span class="gradient-text">Explorer</span></span>
-                    </h1>
-
-                    <p class="header-subtitle">
-                        I build people-first systems, connect business goals with human potential, and keep exploring better ways to help teams grow.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="#about" class="btn btn-creative">Explore My Story</a>
-                        <a href="#contact" class="btn btn-ghost">Let’s Connect</a>
-                    </div>
-                </div>
-
-                <div class="hero-card reveal">
-                    <div class="profile-orbit">
-                        <img src="assets/imgs/OshanDP.png" alt="Oshan Maharjan - HR Professional">
-                        <span class="orbit-pill one">People Strategy</span>
-                        <span class="orbit-pill two">HR Analytics</span>
-                        <span class="orbit-pill three">Growth Mindset</span>
-                    </div>
-
-                    <div class="hero-stats">
-                        <div class="stat-box"><strong>HR</strong><span>Leadership</span></div>
-                        <div class="stat-box"><strong>OD</strong><span>Development</span></div>
-                        <div class="stat-box"><strong>HRBP</strong><span>Strategy</span></div>
+                    <div class="about-card glass-card reveal">
+                        <p class="section-subtitle">Who Am I?</p>
+                        <h2 class="section-title">A Brief Introduction</h2>
+                        <p class="about-text">
+                            I always had a vision of rising as a dynamic professional from the very outset. I started my early career as a recruiter and continued to explore every new project and role that came my way. With progressive enthusiasm, I bring strong expertise in <strong>human resources, talent management, process analytics, strategic HR, and organizational development</strong>.
+                        </p>
+                        <p class="about-text">
+                            I believe in achieving goals as a team and approach every challenge with a growth mindset — creating value and learning opportunities for all stakeholders, never shying away from tough problems, even when the odds seem slim.
+                        </p>
+                        <div class="highlight-grid">
+                            <div class="highlight-chip">Talent Management</div>
+                            <div class="highlight-chip">Strategic HR</div>
+                            <div class="highlight-chip">People Analytics</div>
+                        </div>
+                        <p class="about-text">
+                            Beyond work, I recharge through nature, e-gaming, and continuous learning — a well-rounded perspective that fuels creativity and innovative thinking in professional spaces.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="https://drive.google.com/u/1/uc?id=17b1NVBC5RBRDQdNa13y1RLa-s1RX7OGF&amp;export=download" target="_blank" rel="noopener" class="btn-creative"><i class="ti-download"></i> Download My CV</a>
+                            <button type="button" class="btn-ghost" id="copyEmail"><i class="ti-email"></i> Copy Email</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <!-- End of Hero Header -->
+        </section>
 
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="about">
-                <div class="about-img-holder reveal">
-                    <img src="assets/imgs/OshanDP.png" class="about-img" alt="Oshan Maharjan - HR Professional">
-                </div>
-
-                <div class="about-caption reveal">
-                    <p class="section-subtitle">Who Am I?</p>
-                    <h2 class="section-title">A Brief Introduction</h2>
-
-                    <p class="about-text">
-                        I always had a vision of rising as a dynamic professional from the very outset. I started my early career as a recruiter and continued to explore every new project and role that came my way. With progressive enthusiasm, I bring strong expertise in <strong>human resources, talent management, process analytics, strategic HR, and organizational development</strong>.
-                    </p>
-
-                    <p class="about-text">
-                        I believe in achieving goals as a team and approach every challenge with a growth mindset — creating value and learning opportunities for all stakeholders, never shying away from tough problems, even when the odds seem slim.
-                    </p>
-
-                    <div class="about-highlights">
-                        <div class="highlight-chip">Talent Management</div>
-                        <div class="highlight-chip">Strategic HR</div>
-                        <div class="highlight-chip">People Analytics</div>
-                    </div>
-
-                    <p class="about-text">
-                        Beyond work, I recharge through nature, e-gaming, and continuous learning — a well-rounded perspective that fuels creativity and innovative thinking in professional spaces.
-                    </p>
-
-                    <a href="https://drive.google.com/u/1/uc?id=17b1NVBC5RBRDQdNa13y1RLa-s1RX7OGF&amp;export=download" target="_blank" rel="noopener" class="btn btn-creative mt-3">Download My CV</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of About Section -->
-
-    <!-- Skills / Tools Section -->
-    <section class="section" id="service">
-        <div class="container text-center">
-            <p class="section-subtitle reveal">Tools I Work With Comfortably</p>
-            <h2 class="section-title reveal">Softwares &amp; Platforms</h2>
-            <p class="section-intro reveal">
-                A blend of HR systems, productivity tools, analytics platforms, and creative software that helps me work smarter and communicate better.
-            </p>
-
-            <div class="row">
-                <div class="col-md-6 col-lg-3 mb-4 reveal">
-                    <div class="creative-card tool-card">
-                        <img src="assets/imgs/MSO.png" alt="Microsoft Office" class="icon">
-                        <h3 class="title">MS Office Suite</h3>
-                        <p class="subtitle">Advanced Excel, PowerPoint, Word &amp; Teams</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 mb-4 reveal">
-                    <div class="creative-card tool-card">
-                        <img src="assets/imgs/Adove.png" alt="Adobe Creative Suite" class="icon">
-                        <h3 class="title">Adobe Creative Tools</h3>
-                        <p class="subtitle">Photoshop, Illustrator, Lightroom, Acrobat</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 mb-4 reveal">
-                    <div class="creative-card tool-card">
-                        <img src="assets/imgs/HRIS.png" alt="HR Systems" class="icon">
-                        <h3 class="title">HR Technologies</h3>
-                        <p class="subtitle">HRIS, HRMS, ATS, Payroll Systems</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 mb-4 reveal">
-                    <div class="creative-card tool-card">
-                        <img src="assets/imgs/Filmora.png" alt="Video Editing" class="icon">
-                        <h3 class="title">Video &amp; Audio Editing</h3>
-                        <p class="subtitle">Filmora, CapCut, Audacity &amp; Similar Tools</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of Tools Section -->
-
-    <!-- Experiences Section -->
-    <section class="section" id="Experiences">
-        <div class="container text-center">
-            <p class="section-subtitle reveal">My Professional Journey</p>
-            <h2 class="section-title reveal">Key Experiences</h2>
-            <p class="section-intro reveal">
-                From recruitment and sales to HR business partnering, consulting, operations, and global HR leadership.
-            </p>
-
-            <div class="experience-wrapper">
+        <section class="section" id="service">
+            <div class="container text-center">
+                <p class="section-subtitle reveal">Tools I Work With Comfortably</p>
+                <h2 class="section-title reveal">Softwares &amp; Platforms</h2>
+                <p class="section-intro reveal">A blend of HR systems, productivity tools, analytics platforms, and creative software that helps me work smarter and communicate better.</p>
                 <div class="row">
-                    <div class="col-md-6 col-lg-3 mb-4 reveal">
-                        <div class="creative-card experience-card">
-                            <img src="assets/imgs/CG.png" class="experience-logo" alt="Chaudhary Group">
-                            <h3>Chaudhary Group</h3>
-                            <p class="role">Head of Human Resources<br>Global</p>
-                            <span class="date">Oct 2023 – Present</span>
-                        </div>
-                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="tool-card glass-card lift-card"><img src="assets/imgs/MSO.png" alt="Microsoft Office" class="icon"><h3 class="title">MS Office Suite</h3><p class="subtitle">Advanced Excel, PowerPoint, Word &amp; Teams</p></div></div>
+                    <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="tool-card glass-card lift-card"><img src="assets/imgs/Adove.png" alt="Adobe Creative Suite" class="icon"><h3 class="title">Adobe Creative Tools</h3><p class="subtitle">Photoshop, Illustrator, Lightroom, Acrobat</p></div></div>
+                    <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="tool-card glass-card lift-card"><img src="assets/imgs/HRIS.png" alt="HR Systems" class="icon"><h3 class="title">HR Technologies</h3><p class="subtitle">HRIS, HRMS, ATS, Payroll Systems</p></div></div>
+                    <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="tool-card glass-card lift-card"><img src="assets/imgs/Filmora.png" alt="Video Editing" class="icon"><h3 class="title">Video &amp; Audio Editing</h3><p class="subtitle">Filmora, CapCut, Audacity &amp; Similar Tools</p></div></div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="col-md-6 col-lg-3 mb-4 reveal">
-                        <div class="creative-card experience-card">
-                            <img src="assets/imgs/ABC Logo.jpg" class="experience-logo" alt="ABC Corp">
-                            <h3>ABC Corp</h3>
-                            <p class="role">COO &amp; Consultant</p>
-                            <span class="date">Sep 2022 – Present</span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 mb-4 reveal">
-                        <div class="creative-card experience-card">
-                            <img src="assets/imgs/GG.png" class="experience-logo" alt="Golyan Group">
-                            <h3>Golyan Group</h3>
-                            <p class="role">DM - Strategic Control<br>HRBP</p>
-                            <span class="date">Jan 2020 – Sep 2022</span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 mb-4 reveal">
-                        <div class="creative-card experience-card">
-                            <img src="assets/imgs/MJ.jpg" class="experience-logo" alt="merojob">
-                            <h3>merojob</h3>
-                            <p class="role">Professional Recruiter<br>&amp; Sales</p>
-                            <span class="date">Feb 2017 – Jan 2020</span>
-                        </div>
+        <section class="section" id="Experiences">
+            <div class="container text-center">
+                <p class="section-subtitle reveal">My Professional Journey</p>
+                <h2 class="section-title reveal">Key Experiences</h2>
+                <p class="section-intro reveal">From recruitment and sales to HR business partnering, consulting, operations, and global HR leadership.</p>
+                <div class="experience-wrapper">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="experience-card glass-card lift-card"><img src="assets/imgs/CG.png" class="experience-logo" alt="Chaudhary Group"><h3>Chaudhary Group</h3><p class="role">Head of Human Resources<br>Global</p><span class="date">Oct 2023 – Present</span></div></div>
+                        <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="experience-card glass-card lift-card"><img src="assets/imgs/ABC Logo.jpg" class="experience-logo" alt="ABC Corp"><h3>ABC Corp</h3><p class="role">COO &amp; Consultant</p><span class="date">Sep 2022 – Present</span></div></div>
+                        <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="experience-card glass-card lift-card"><img src="assets/imgs/GG.png" class="experience-logo" alt="Golyan Group"><h3>Golyan Group</h3><p class="role">DM - Strategic Control<br>HRBP</p><span class="date">Jan 2020 – Sep 2022</span></div></div>
+                        <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="experience-card glass-card lift-card"><img src="assets/imgs/MJ.jpg" class="experience-logo" alt="merojob"><h3>merojob</h3><p class="role">Professional Recruiter<br>&amp; Sales</p><span class="date">Feb 2017 – Jan 2020</span></div></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- End of Experiences -->
+        </section>
 
-    <!-- Credentials Section -->
-    <section class="section" id="Credentials">
-        <div class="container text-center">
-            <p class="section-subtitle reveal">Continuous Learner</p>
-            <h2 class="section-title reveal">Recent Certifications &amp; Courses</h2>
-            <p class="section-intro reveal">
-                Selected certifications that reflect my interest in analytics, digital leadership, HR strategy, business partnering, and planning.
-            </p>
-
-            <div class="row justify-content-center">
-                <div class="col-md-4 col-lg-3 mb-4 reveal">
-                    <a href="https://simpli-web.app.link/e/702FjvGmIyb" target="_blank" rel="noopener" class="credential-card">
-                        <img src="assets/imgs/BAexcel.png" alt="Business Analytics with Excel">
-                        <span class="credential-overlay"><span><h3>Simplilearn</h3><p>Business Analytics with Excel</p></span></span>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-lg-3 mb-4 reveal">
-                    <a href="https://simpli-web.app.link/e/03lgHbmmIyb" target="_blank" rel="noopener" class="credential-card">
-                        <img src="assets/imgs/DL.png" alt="Digital Leadership">
-                        <span class="credential-overlay"><span><h3>Simplilearn</h3><p>Digital Leadership</p></span></span>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-lg-3 mb-4 reveal">
-                    <a href="https://simpli-web.app.link/e/EDS0RCCmIyb" target="_blank" rel="noopener" class="credential-card">
-                        <img src="assets/imgs/PBI.png" alt="Power BI">
-                        <span class="credential-overlay"><span><h3>Simplilearn</h3><p>Power BI for Beginners</p></span></span>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-lg-3 mb-4 reveal">
-                    <a href="https://www.linkedin.com/learning/certificates/46f09c4ad973113fc69d800551c9de061db6be8035a2d4ecc041a30c89bfc0bf" target="_blank" rel="noopener" class="credential-card">
-                        <img src="assets/imgs/SHRM.png" alt="Strategic HR">
-                        <span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>Strategic Human Resources</p></span></span>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-lg-3 mb-4 reveal">
-                    <a href="https://www.linkedin.com/learning/certificates/191b2193b329a1ccf9c33407178eb1f6bfe68337f24aa58abe4c1b59d45cc001" target="_blank" rel="noopener" class="credential-card">
-                        <img src="assets/imgs/HRBP.png" alt="HR Business Partner">
-                        <span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>HR Business Partner</p></span></span>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-lg-3 mb-4 reveal">
-                    <a href="https://www.linkedin.com/learning/certificates/aeee7a2a01e81e012328d6f0d39c55f9ecb4d029a87c68890de799d61737a862" target="_blank" rel="noopener" class="credential-card">
-                        <img src="assets/imgs/Splan.png" alt="Strategic Planning">
-                        <span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>Strategic Planning Foundations</p></span></span>
-                    </a>
+        <section class="section" id="Credentials">
+            <div class="container text-center">
+                <p class="section-subtitle reveal">Continuous Learner</p>
+                <h2 class="section-title reveal">Recent Certifications &amp; Courses</h2>
+                <p class="section-intro reveal">Selected certifications that reflect my interest in analytics, digital leadership, HR strategy, business partnering, and planning.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://simpli-web.app.link/e/702FjvGmIyb" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/BAexcel.png" alt="Business Analytics with Excel"><span class="credential-overlay"><span><h3>Simplilearn</h3><p>Business Analytics with Excel</p></span></span></a></div>
+                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://simpli-web.app.link/e/03lgHbmmIyb" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/DL.png" alt="Digital Leadership"><span class="credential-overlay"><span><h3>Simplilearn</h3><p>Digital Leadership</p></span></span></a></div>
+                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://simpli-web.app.link/e/EDS0RCCmIyb" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/PBI.png" alt="Power BI"><span class="credential-overlay"><span><h3>Simplilearn</h3><p>Power BI for Beginners</p></span></span></a></div>
+                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://www.linkedin.com/learning/certificates/46f09c4ad973113fc69d800551c9de061db6be8035a2d4ecc041a30c89bfc0bf" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/SHRM.png" alt="Strategic HR"><span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>Strategic Human Resources</p></span></span></a></div>
+                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://www.linkedin.com/learning/certificates/191b2193b329a1ccf9c33407178eb1f6bfe68337f24aa58abe4c1b59d45cc001" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/HRBP.png" alt="HR Business Partner"><span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>HR Business Partner</p></span></span></a></div>
+                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://www.linkedin.com/learning/certificates/aeee7a2a01e81e012328d6f0d39c55f9ecb4d029a87c68890de799d61737a862" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/Splan.png" alt="Strategic Planning"><span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>Strategic Planning Foundations</p></span></span></a></div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- End of Credentials -->
+        </section>
 
-    <!-- Blog Section -->
-    <section class="section" id="Blog">
-        <div class="container text-center">
-            <p class="section-subtitle reveal">Thoughts &amp; Insights</p>
-            <h2 class="section-title reveal">From My Blog</h2>
-            <p class="section-intro reveal">
-                Reflections on career growth, workplace culture, HR, social change, balance, and the human side of professional success.
-            </p>
-
-            <div class="blog-toolbar reveal" aria-label="Blog filters and search">
-                <label class="blog-search" for="blogSearch">
-                    <i class="ti-search" aria-hidden="true"></i>
-                    <input type="search" id="blogSearch" placeholder="Search articles..." autocomplete="off">
-                </label>
-
-                <div class="blog-filters" role="group" aria-label="Filter blog posts by topic">
-                    <button type="button" class="blog-filter active" data-filter="all">All</button>
-                    <button type="button" class="blog-filter" data-filter="career">Career</button>
-                    <button type="button" class="blog-filter" data-filter="hr">HR</button>
-                    <button type="button" class="blog-filter" data-filter="workplace">Workplace</button>
-                    <button type="button" class="blog-filter" data-filter="society">Society</button>
+        <section class="section" id="playground">
+            <div class="container">
+                <div class="playground glass-card reveal">
+                    <p class="section-subtitle">Interactive Corner</p>
+                    <h2 class="section-title">Pick a Lens</h2>
+                    <p class="section-intro">Visitors can click around and discover quick insights about how I approach HR, leadership, and growth.</p>
+                    <div class="playground-grid" role="group" aria-label="Interactive professional insights">
+                        <button type="button" class="play-button" data-insight="People strategy works best when empathy and business clarity meet. I focus on systems that help people perform without losing the human side of work."><i class="ti-user"></i><strong>People Lens</strong><span>How I think about talent and culture.</span></button>
+                        <button type="button" class="play-button" data-insight="HR analytics should not be dashboards for decoration. The goal is to make better decisions, spot risks earlier, and explain people patterns clearly."><i class="ti-bar-chart"></i><strong>Analytics Lens</strong><span>How data supports better decisions.</span></button>
+                        <button type="button" class="play-button" data-insight="Growth is built through curiosity, feedback, and action. My work style is to learn fast, test responsibly, and keep improving the system."><i class="ti-rocket"></i><strong>Growth Lens</strong><span>How I approach learning and change.</span></button>
+                    </div>
+                    <div class="insight-output" id="insightOutput" aria-live="polite">Click any lens above to reveal a quick thought.</div>
                 </div>
             </div>
+        </section>
 
-            <p class="blog-result-count reveal" id="blogResultCount">Showing all articles</p>
+        <section class="section" id="Blog">
+            <div class="container text-center">
+                <p class="section-subtitle reveal">Thoughts &amp; Insights</p>
+                <h2 class="section-title reveal">From My Blog</h2>
+                <p class="section-intro reveal">Reflections on career growth, workplace culture, HR, social change, balance, and the human side of professional success.</p>
 
-            <div class="blog-list" id="blogList">
-                <article class="blog-card reveal" data-category="career" data-title="How to Build A Strong Personal Brand for Career Success? personal branding career growth">
-                    <div class="blog-card-media">
-                        <img src="assets/imgs/b1.jpg" class="blog-card-img" alt="Personal Branding">
-                        <span class="blog-badge"><i class="ti-pencil-alt"></i> Career Growth</span>
+                <div class="blog-toolbar glass-card reveal" aria-label="Blog filters and search">
+                    <label class="blog-search" for="blogSearch"><i class="ti-search" aria-hidden="true"></i><input type="search" id="blogSearch" placeholder="Search articles..." autocomplete="off"></label>
+                    <div class="blog-filters" role="group" aria-label="Filter blog posts by topic">
+                        <button type="button" class="blog-filter active" data-filter="all">All</button>
+                        <button type="button" class="blog-filter" data-filter="career">Career</button>
+                        <button type="button" class="blog-filter" data-filter="hr">HR</button>
+                        <button type="button" class="blog-filter" data-filter="workplace">Workplace</button>
+                        <button type="button" class="blog-filter" data-filter="society">Society</button>
                     </div>
+                </div>
+                <p class="blog-result-count reveal" id="blogResultCount">Showing all articles</p>
 
-                    <div class="blog-card-body">
-                        <h3 class="blog-card-title">How to Build A Strong Personal Brand for Career Success?</h3>
-                        <p class="blog-card-caption">
-                            <a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank" rel="noopener">By ABC Corp Nepal</a>
-                            <span>Career</span>
-                        </p>
-                        <p class="blog-card-text">Personal branding is not optional anymore. It helps professionals build credibility, visibility, and long-term career opportunity.</p>
-                        <a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card reveal" data-category="workplace" data-title="Is Work-Life Balance a Myth, Cycle, or Achievement? balance wellbeing rhythm">
-                    <div class="blog-card-media">
-                        <img src="assets/imgs/b2.jpg" class="blog-card-img" alt="Work-Life Balance">
-                        <span class="blog-badge"><i class="ti-heart"></i> Work &amp; Life</span>
-                    </div>
-
-                    <div class="blog-card-body">
-                        <h3 class="blog-card-title">Is Work-Life Balance a Myth, Cycle, or Achievement?</h3>
-                        <p class="blog-card-caption">
-                            <a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank" rel="noopener">By ABC Corp Nepal</a>
-                            <span>Workplace</span>
-                        </p>
-                        <p class="blog-card-text">A reflection on whether balance is a fixed destination, a repeating cycle, or a set of conscious choices that protect performance and well-being.</p>
-                        <a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card reveal" data-category="workplace" data-title="Gentle reminder corporate communication follow up patience accountability">
-                    <div class="blog-card-media">
-                        <img src="https://media.licdn.com/dms/image/v2/D5612AQFhPGx_EQiPNg/article-cover_image-shrink_720_1280/B56Z61Xd4zHIAU-/0/1781159294515?e=2147483647&amp;t=dHI5AwGx-nc724_3hQXHIVx-5w3cmE7Va9SH-fwqVLY&amp;v=beta" class="blog-card-img" alt="Gentle Reminder article image" loading="lazy">
-                        <span class="blog-badge"><i class="ti-email"></i> Workplace</span>
-                    </div>
-
-                    <div class="blog-card-body">
-                        <h3 class="blog-card-title">“Gentle reminder” is the corporate way of saying, “I have already reminded you three times...”</h3>
-                        <p class="blog-card-caption">
-                            <a href="https://www.linkedin.com/pulse/gentle-reminder-corporate-way-saying-i-have-already-you-maharjan-4yh7c/" target="_blank" rel="noopener">By Oshan Maharjan</a>
-                            <span>Jun 11, 2026</span>
-                        </p>
-                        <p class="blog-card-text">A sharp and relatable take on corporate follow-ups, tone, accountability, and the quiet meaning behind polite reminders.</p>
-                        <a href="https://www.linkedin.com/pulse/gentle-reminder-corporate-way-saying-i-have-already-you-maharjan-4yh7c/" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card reveal" data-category="society" data-title="The GenZ Movement Pain to Purpose Nepal history youth corruption free speech hope">
-                    <div class="blog-card-media">
-                        <img src="https://media.licdn.com/dms/image/v2/D5612AQH0dca5LTnfBQ/article-cover_image-shrink_720_1280/B56ZkyBQc1I8AI-/0/1757480815245?e=2147483647&amp;t=TUaoc-4c_ZW_q7c4Z31l6LVRFoRaRVaErSWTWN3gpHE&amp;v=beta" class="blog-card-img" alt="GenZ Movement article image" loading="lazy">
-                        <span class="blog-badge"><i class="ti-flag-alt"></i> Society</span>
-                    </div>
-
-                    <div class="blog-card-body">
-                        <h3 class="blog-card-title">The GenZ Movement: Pain to Purpose, A New Chapter of Nepal</h3>
-                        <p class="blog-card-caption">
-                            <a href="https://www.linkedin.com/pulse/genz-movement-pain-purpose-new-chapter-nepal-history-never-maharjan-khooc/" target="_blank" rel="noopener">By Oshan Maharjan</a>
-                            <span>Sep 10, 2025</span>
-                        </p>
-                        <p class="blog-card-text">A heartfelt reflection on youth-led courage, grief, chaos, and the responsibility to rebuild Nepal with hope and wisdom.</p>
-                        <a href="https://www.linkedin.com/pulse/genz-movement-pain-purpose-new-chapter-nepal-history-never-maharjan-khooc/" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card reveal" data-category="workplace" data-title="Some days I think for 6 hours and work for 2 hours yet it still works productivity thinking burnout human performance">
-                    <div class="blog-card-media">
-                        <img src="https://media.licdn.com/dms/image/v2/D5612AQFJ4gNyxDY-ug/article-cover_image-shrink_720_1280/B56ZtEgTv.GsAM-/0/1766380881150?e=2147483647&amp;t=A2OeJtX7dLdOxgkHW7eV63wvIba2jzChEu8CiWwkQqE&amp;v=beta" class="blog-card-img" alt="Strategic thinking and productivity article image" loading="lazy">
-                        <span class="blog-badge"><i class="ti-time"></i> Productivity</span>
-                    </div>
-
-                    <div class="blog-card-body">
-                        <h3 class="blog-card-title">Some Days I Think for 6 Hours and Work for About 2 Hours, Yet It Still Works</h3>
-                        <p class="blog-card-caption">
-                            <a href="https://www.linkedin.com/pulse/some-days-i-think-6-hours-work-2-yet-still-works-oshan-maharjan-vdsac/" target="_blank" rel="noopener">By Oshan Maharjan</a>
-                            <span>Dec 22, 2025</span>
-                        </p>
-                        <p class="blog-card-text">A human-centered reminder that output is not always linear, and that deep thinking can be as valuable as visible execution.</p>
-                        <a href="https://www.linkedin.com/pulse/some-days-i-think-6-hours-work-2-yet-still-works-oshan-maharjan-vdsac/" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card reveal" data-category="hr" data-title="Two Worlds of HR Wearing All the Hats vs Playing One Well small business HR large business HR">
-                    <div class="blog-card-media">
-                        <img src="https://media.licdn.com/dms/image/v2/D5612AQFeFSril2yE9g/article-cover_image-shrink_720_1280/B56Zj0U_79HkAI-/0/1756445814510?e=2147483647&amp;t=Itx1JpCAGZXH1HRNIWNRH8_ZrbBEi2xIBy3r5ETmYlE&amp;v=beta" class="blog-card-img" alt="Small business HR and large business HR article image" loading="lazy">
-                        <span class="blog-badge"><i class="ti-briefcase"></i> HR</span>
-                    </div>
-
-                    <div class="blog-card-body">
-                        <h3 class="blog-card-title">Two Worlds of HR: Wearing All the Hats vs. Playing One Well</h3>
-                        <p class="blog-card-caption">
-                            <a href="https://www.linkedin.com/pulse/two-worlds-hr-wearing-all-hats-vs-playing-one-well-oshan-maharjan-24pdc/" target="_blank" rel="noopener">By Oshan Maharjan</a>
-                            <span>Aug 29, 2025</span>
-                        </p>
-                        <p class="blog-card-text">A comparison of small enterprise HR and large corporate HR, and how both experiences build different but equally valuable professional muscles.</p>
-                        <a href="https://www.linkedin.com/pulse/two-worlds-hr-wearing-all-hats-vs-playing-one-well-oshan-maharjan-24pdc/" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card reveal" data-category="career" data-title="Why do people apply for jobs they clearly know they do not align well recruitment applicants ATS mismatch">
-                    <div class="blog-card-media">
-                        <img src="https://media.licdn.com/dms/image/v2/D5612AQFRwZNPlvj4-g/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1731913350238?e=2147483647&amp;t=iHkWjXV2kK5yFmcYhAJdoiDOMXjTg_qk_qB8rOxtQv4&amp;v=beta" class="blog-card-img" alt="Recruitment mismatch article image" loading="lazy">
-                        <span class="blog-badge"><i class="ti-user"></i> Recruitment</span>
-                    </div>
-
-                    <div class="blog-card-body">
-                        <h3 class="blog-card-title">Why Do People Apply for Jobs They Clearly Know They Don’t Align Well?</h3>
-                        <p class="blog-card-caption">
-                            <a href="https://www.linkedin.com/pulse/why-do-people-apply-jobs-clearly-know-dont-align-well-oshan-maharjan-01fpc/" target="_blank" rel="noopener">By Oshan Maharjan</a>
-                            <span>Nov 18, 2024</span>
-                        </p>
-                        <p class="blog-card-text">A recruiter’s humorous look at mismatched applications, spray-and-pray job hunting, misunderstood roles, and optimistic candidates.</p>
-                        <a href="https://www.linkedin.com/pulse/why-do-people-apply-jobs-clearly-know-dont-align-well-oshan-maharjan-01fpc/" target="_blank" rel="noopener" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                    </div>
-                </article>
+                <div class="blog-list" id="blogList">
+                    <article class="blog-card glass-card lift-card reveal" data-category="career" data-title="How to Build A Strong Personal Brand for Career Success personal branding career growth"><div class="blog-card-media"><img src="assets/imgs/b1.jpg" class="blog-card-img" alt="Personal Branding"><span class="blog-badge"><i class="ti-pencil-alt"></i> Career Growth</span></div><div class="blog-card-body"><h3 class="blog-card-title">How to Build A Strong Personal Brand for Career Success?</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank" rel="noopener">By ABC Corp Nepal</a><span>Career</span></p><p class="blog-card-text">Personal branding is not optional anymore. It helps professionals build credibility, visibility, and long-term career opportunity.</p><a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
+                    <article class="blog-card glass-card lift-card reveal" data-category="workplace" data-title="Is Work-Life Balance a Myth Cycle or Achievement balance wellbeing rhythm"><div class="blog-card-media"><img src="assets/imgs/b2.jpg" class="blog-card-img" alt="Work-Life Balance"><span class="blog-badge"><i class="ti-heart"></i> Work &amp; Life</span></div><div class="blog-card-body"><h3 class="blog-card-title">Is Work-Life Balance a Myth, Cycle, or Achievement?</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank" rel="noopener">By ABC Corp Nepal</a><span>Workplace</span></p><p class="blog-card-text">A reflection on whether balance is a fixed destination, a repeating cycle, or a set of conscious choices that protect performance and well-being.</p><a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
+                    <article class="blog-card glass-card lift-card reveal" data-category="workplace" data-title="Gentle reminder corporate communication follow up patience accountability"><div class="blog-card-media"><img src="https://media.licdn.com/dms/image/v2/D5612AQFhPGx_EQiPNg/article-cover_image-shrink_720_1280/B56Z61Xd4zHIAU-/0/1781159294515?e=2147483647&amp;t=dHI5AwGx-nc724_3hQXHIVx-5w3cmE7Va9SH-fwqVLY&amp;v=beta" class="blog-card-img" alt="Gentle Reminder article image" loading="lazy"><span class="blog-badge"><i class="ti-email"></i> Workplace</span></div><div class="blog-card-body"><h3 class="blog-card-title">“Gentle reminder” is the corporate way of saying, “I have already reminded you three times...”</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/gentle-reminder-corporate-way-saying-i-have-already-you-maharjan-4yh7c/" target="_blank" rel="noopener">By Oshan Maharjan</a><span>Jun 11, 2026</span></p><p class="blog-card-text">A sharp and relatable take on corporate follow-ups, tone, accountability, and the quiet meaning behind polite reminders.</p><a href="https://www.linkedin.com/pulse/gentle-reminder-corporate-way-saying-i-have-already-you-maharjan-4yh7c/" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
+                    <article class="blog-card glass-card lift-card reveal" data-category="society" data-title="The GenZ Movement Pain to Purpose Nepal history youth corruption free speech hope"><div class="blog-card-media"><img src="https://media.licdn.com/dms/image/v2/D5612AQH0dca5LTnfBQ/article-cover_image-shrink_720_1280/B56ZkyBQc1I8AI-/0/1757480815245?e=2147483647&amp;t=TUaoc-4c_ZW_q7c4Z31l6LVRFoRaRVaErSWTWN3gpHE&amp;v=beta" class="blog-card-img" alt="GenZ Movement article image" loading="lazy"><span class="blog-badge"><i class="ti-flag-alt"></i> Society</span></div><div class="blog-card-body"><h3 class="blog-card-title">The GenZ Movement: Pain to Purpose, A New Chapter of Nepal</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/genz-movement-pain-purpose-new-chapter-nepal-history-never-maharjan-khooc/" target="_blank" rel="noopener">By Oshan Maharjan</a><span>Sep 10, 2025</span></p><p class="blog-card-text">A heartfelt reflection on youth-led courage, grief, chaos, and the responsibility to rebuild Nepal with hope and wisdom.</p><a href="https://www.linkedin.com/pulse/genz-movement-pain-purpose-new-chapter-nepal-history-never-maharjan-khooc/" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
+                    <article class="blog-card glass-card lift-card reveal" data-category="workplace" data-title="Some days I think for 6 hours and work for 2 hours productivity thinking burnout human performance"><div class="blog-card-media"><img src="https://media.licdn.com/dms/image/v2/D5612AQFJ4gNyxDY-ug/article-cover_image-shrink_720_1280/B56ZtEgTv.GsAM-/0/1766380881150?e=2147483647&amp;t=A2OeJtX7dLdOxgkHW7eV63wvIba2jzChEu8CiWwkQqE&amp;v=beta" class="blog-card-img" alt="Strategic thinking and productivity article image" loading="lazy"><span class="blog-badge"><i class="ti-time"></i> Productivity</span></div><div class="blog-card-body"><h3 class="blog-card-title">Some Days I Think for 6 Hours and Work for About 2 Hours, Yet It Still Works</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/some-days-i-think-6-hours-work-2-yet-still-works-oshan-maharjan-vdsac/" target="_blank" rel="noopener">By Oshan Maharjan</a><span>Dec 22, 2025</span></p><p class="blog-card-text">A human-centered reminder that output is not always linear, and that deep thinking can be as valuable as visible execution.</p><a href="https://www.linkedin.com/pulse/some-days-i-think-6-hours-work-2-yet-still-works-oshan-maharjan-vdsac/" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
+                    <article class="blog-card glass-card lift-card reveal" data-category="hr" data-title="Two Worlds of HR Wearing All the Hats vs Playing One Well small business HR large business HR"><div class="blog-card-media"><img src="https://media.licdn.com/dms/image/v2/D5612AQFeFSril2yE9g/article-cover_image-shrink_720_1280/B56Zj0U_79HkAI-/0/1756445814510?e=2147483647&amp;t=Itx1JpCAGZXH1HRNIWNRH8_ZrbBEi2xIBy3r5ETmYlE&amp;v=beta" class="blog-card-img" alt="Small business HR and large business HR article image" loading="lazy"><span class="blog-badge"><i class="ti-briefcase"></i> HR</span></div><div class="blog-card-body"><h3 class="blog-card-title">Two Worlds of HR: Wearing All the Hats vs. Playing One Well</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/two-worlds-hr-wearing-all-hats-vs-playing-one-well-oshan-maharjan-24pdc/" target="_blank" rel="noopener">By Oshan Maharjan</a><span>Aug 29, 2025</span></p><p class="blog-card-text">A comparison of small enterprise HR and large corporate HR, and how both experiences build different but equally valuable professional muscles.</p><a href="https://www.linkedin.com/pulse/two-worlds-hr-wearing-all-hats-vs-playing-one-well-oshan-maharjan-24pdc/" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
+                    <article class="blog-card glass-card lift-card reveal" data-category="career" data-title="Why do people apply for jobs they clearly know they do not align well recruitment applicants ATS mismatch"><div class="blog-card-media"><img src="https://media.licdn.com/dms/image/v2/D5612AQFRwZNPlvj4-g/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1731913350238?e=2147483647&amp;t=iHkWjXV2kK5yFmcYhAJdoiDOMXjTg_qk_qB8rOxtQv4&amp;v=beta" class="blog-card-img" alt="Recruitment mismatch article image" loading="lazy"><span class="blog-badge"><i class="ti-user"></i> Recruitment</span></div><div class="blog-card-body"><h3 class="blog-card-title">Why Do People Apply for Jobs They Clearly Know They Don’t Align Well?</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/why-do-people-apply-jobs-clearly-know-dont-align-well-oshan-maharjan-01fpc/" target="_blank" rel="noopener">By Oshan Maharjan</a><span>Nov 18, 2024</span></p><p class="blog-card-text">A recruiter’s humorous look at mismatched applications, spray-and-pray job hunting, misunderstood roles, and optimistic candidates.</p><a href="https://www.linkedin.com/pulse/why-do-people-apply-jobs-clearly-know-dont-align-well-oshan-maharjan-01fpc/" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
+                </div>
+                <div class="empty-blog-state" id="emptyBlogState">No articles matched your search. Try another keyword or choose All.</div>
             </div>
+        </section>
 
-            <div class="empty-blog-state" id="emptyBlogState">No articles matched your search. Try another keyword or choose All.</div>
-        </div>
-    </section>
-    <!-- End of Blog -->
-
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="container text-center">
-            <div class="contact-panel reveal">
-                <h2 class="section-title mb-4">Let's Connect</h2>
-
-                <p class="mb-4">
-                    I love connecting with driven, self-motivated, and like-minded professionals.<br>
-                    Feel free to reach out — I’m always open to meaningful conversations.
-                </p>
-
-                <p class="contact-info mb-5">
-                    <strong>+977 9823583937</strong> |
-                    <a href="mailto:oshanmhr@gmail.com">oshanmhr@gmail.com</a>
-                </p>
-
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/oshan-maharjan-hr/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="ti-linkedin"></i></a>
-                    <a href="https://www.facebook.com/oshan.kong" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook"><i class="ti-facebook"></i></a>
-                    <a href="https://twitter.com/ccoc2134" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter"><i class="ti-twitter-alt"></i></a>
-                    <a href="https://www.instagram.com/oshan_mhrzn/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><i class="ti-instagram"></i></a>
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="contact-panel glass-card reveal">
+                    <h2 class="section-title mb-4">Let's Connect</h2>
+                    <p class="mb-4">I love connecting with driven, self-motivated, and like-minded professionals.<br>Feel free to reach out — I’m always open to meaningful conversations.</p>
+                    <p class="contact-info mb-0"><strong>+977 9823583937</strong> | <a href="mailto:oshanmhr@gmail.com">oshanmhr@gmail.com</a></p>
+                    <div class="contact-actions">
+                        <a href="mailto:oshanmhr@gmail.com?subject=Hello%20Oshan" class="btn-creative"><i class="ti-email"></i> Send Email</a>
+                        <button type="button" class="btn-ghost" id="copyPhone"><i class="ti-mobile"></i> Copy Phone</button>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/oshan-maharjan-hr/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="ti-linkedin"></i></a>
+                        <a href="https://www.facebook.com/oshan.kong" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook"><i class="ti-facebook"></i></a>
+                        <a href="https://twitter.com/ccoc2134" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter"><i class="ti-twitter-alt"></i></a>
+                        <a href="https://www.instagram.com/oshan_mhrzn/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><i class="ti-instagram"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- End of Contact -->
+        </section>
     </main>
 
-    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
-        <i class="ti-angle-up"></i>
-    </button>
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top"><i class="ti-angle-up"></i></button>
+    <div class="toast-note" id="toastNote" role="status" aria-live="polite"></div>
 
-    <!-- Scripts -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
@@ -1606,27 +1217,43 @@
         (function () {
             'use strict';
 
+            const body = document.body;
             const navbar = document.getElementById('mainNavbar');
-            const navToggle = document.getElementById('nav-toggle');
+            const navToggle = document.getElementById('navToggle');
             const siteNav = document.getElementById('siteNav');
             const navIndicator = document.getElementById('navIndicator');
-            const navProgress = document.getElementById('navProgress');
-            const navLinks = Array.from(document.querySelectorAll('.custom-navbar .link'));
+            const progressLine = document.getElementById('progressLine');
+            const navLinks = Array.from(document.querySelectorAll('.nav-link-pill'));
             const sections = Array.from(document.querySelectorAll('header[id], section[id]'));
             const backToTop = document.getElementById('backToTop');
-            const revealElements = document.querySelectorAll('.reveal');
-            const heroCard = document.querySelector('.hero-card');
+            const revealElements = Array.from(document.querySelectorAll('.reveal'));
+            const heroStage = document.getElementById('heroStage');
+            const cursorSpotlight = document.getElementById('cursorSpotlight');
+            const themeToggle = document.getElementById('themeToggle');
+            const toastNote = document.getElementById('toastNote');
+            const roleRotator = document.getElementById('roleRotator');
+            const surpriseMe = document.getElementById('surpriseMe');
+            const energyText = document.getElementById('energyText');
+
+            function showToast(message) {
+                if (!toastNote) return;
+                toastNote.textContent = message;
+                toastNote.classList.add('show');
+                window.clearTimeout(showToast.timer);
+                showToast.timer = window.setTimeout(function () {
+                    toastNote.classList.remove('show');
+                }, 2200);
+            }
 
             function isDesktopNav() {
                 return window.matchMedia('(min-width: 992px)').matches;
             }
 
             function moveIndicatorTo(link) {
-                if (!navIndicator || !link || !isDesktopNav()) {
+                if (!navIndicator || !link || !siteNav || !isDesktopNav()) {
                     if (navIndicator) navIndicator.style.opacity = '0';
                     return;
                 }
-
                 const navRect = siteNav.getBoundingClientRect();
                 const linkRect = link.getBoundingClientRect();
                 navIndicator.style.width = linkRect.width + 'px';
@@ -1654,29 +1281,23 @@
                     closeMobileNav();
                     moveIndicatorTo(link);
                 });
-
-                link.addEventListener('mouseenter', function () {
-                    moveIndicatorTo(link);
-                });
+                link.addEventListener('mouseenter', function () { moveIndicatorTo(link); });
             });
 
             if (siteNav) {
                 siteNav.addEventListener('mouseleave', function () {
-                    const activeLink = document.querySelector('.custom-navbar .link.active');
-                    moveIndicatorTo(activeLink);
+                    moveIndicatorTo(document.querySelector('.nav-link-pill.active'));
                 });
             }
 
-            function setActiveNav() {
+            function updatePageState() {
                 const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
                 let currentId = 'home';
 
                 sections.forEach(function (section) {
-                    const sectionTop = section.offsetTop - 130;
+                    const sectionTop = section.offsetTop - 132;
                     const sectionBottom = sectionTop + section.offsetHeight;
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                        currentId = section.getAttribute('id');
-                    }
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) currentId = section.id;
                 });
 
                 navLinks.forEach(function (link) {
@@ -1685,20 +1306,19 @@
                     if (isCurrent) moveIndicatorTo(link);
                 });
 
-                if (navbar) navbar.classList.toggle('scrolled', scrollPosition > 40);
+                if (navbar) navbar.classList.toggle('scrolled', scrollPosition > 42);
                 if (backToTop) backToTop.classList.toggle('visible', scrollPosition > 650);
-
-                if (navProgress) {
+                if (progressLine) {
                     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
                     const progress = docHeight > 0 ? (scrollPosition / docHeight) * 100 : 0;
-                    navProgress.style.width = Math.min(100, Math.max(0, progress)) + '%';
+                    progressLine.style.width = Math.min(100, Math.max(0, progress)) + '%';
                 }
             }
 
-            window.addEventListener('scroll', setActiveNav, { passive: true });
-            window.addEventListener('resize', setActiveNav);
-            window.addEventListener('load', setActiveNav);
-            setActiveNav();
+            window.addEventListener('scroll', updatePageState, { passive: true });
+            window.addEventListener('resize', updatePageState);
+            window.addEventListener('load', updatePageState);
+            updatePageState();
 
             if ('IntersectionObserver' in window) {
                 const revealObserver = new IntersectionObserver(function (entries) {
@@ -1709,28 +1329,69 @@
                         }
                     });
                 }, { threshold: 0.14 });
-
-                revealElements.forEach(function (element) {
-                    revealObserver.observe(element);
-                });
+                revealElements.forEach(function (element) { revealObserver.observe(element); });
             } else {
-                revealElements.forEach(function (element) {
-                    element.classList.add('show');
+                revealElements.forEach(function (element) { element.classList.add('show'); });
+            }
+
+            if (heroStage && window.matchMedia('(hover: hover)').matches) {
+                heroStage.addEventListener('mousemove', function (event) {
+                    const rect = heroStage.getBoundingClientRect();
+                    const x = event.clientX - rect.left;
+                    const y = event.clientY - rect.top;
+                    const rotateY = ((x / rect.width) - 0.5) * 11;
+                    const rotateX = ((y / rect.height) - 0.5) * -11;
+                    heroStage.style.transform = 'perspective(900px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-8px)';
+                });
+                heroStage.addEventListener('mouseleave', function () { heroStage.style.transform = ''; });
+            }
+
+            if (cursorSpotlight && window.matchMedia('(hover: hover)').matches) {
+                window.addEventListener('pointermove', function (event) {
+                    body.style.setProperty('--mx', event.clientX + 'px');
+                    body.style.setProperty('--my', event.clientY + 'px');
+                    cursorSpotlight.style.opacity = '1';
+                    cursorSpotlight.style.transform = 'translate3d(' + event.clientX + 'px, ' + event.clientY + 'px, 0) translate(-50%, -50%)';
+                }, { passive: true });
+            }
+
+            const savedTheme = localStorage.getItem('oshan-site-theme');
+            if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function () {
+                    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+                    if (dark) {
+                        document.documentElement.removeAttribute('data-theme');
+                        localStorage.setItem('oshan-site-theme', 'light');
+                        showToast('Light mode activated.');
+                    } else {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('oshan-site-theme', 'dark');
+                        showToast('Dark mode activated.');
+                    }
                 });
             }
 
-            if (heroCard && window.matchMedia('(hover: hover)').matches) {
-                heroCard.addEventListener('mousemove', function (event) {
-                    const rect = heroCard.getBoundingClientRect();
-                    const x = event.clientX - rect.left;
-                    const y = event.clientY - rect.top;
-                    const rotateY = ((x / rect.width) - 0.5) * 10;
-                    const rotateX = ((y / rect.height) - 0.5) * -10;
-                    heroCard.style.transform = 'perspective(900px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-8px)';
-                });
+            const roles = ['Learner', 'Explorer', 'People Strategist', 'HR Partner', 'Builder'];
+            let roleIndex = 0;
+            if (roleRotator) {
+                window.setInterval(function () {
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    roleRotator.textContent = roles[roleIndex];
+                }, 1900);
+            }
 
-                heroCard.addEventListener('mouseleave', function () {
-                    heroCard.style.transform = '';
+            const surpriseMessages = [
+                'Try the Pick a Lens section for mini HR insights.',
+                'Search “analytics” or “career” in the blog section.',
+                'Hover over the profile card. It follows your movement.',
+                'Use the lightbulb button to switch the whole site mood.'
+            ];
+            if (surpriseMe) {
+                surpriseMe.addEventListener('click', function () {
+                    const message = surpriseMessages[Math.floor(Math.random() * surpriseMessages.length)];
+                    if (energyText) energyText.textContent = message;
+                    showToast(message);
                 });
             }
 
@@ -1739,7 +1400,6 @@
                 const clickInsideNav = siteNav.contains(event.target) || navToggle.contains(event.target);
                 if (!clickInsideNav && siteNav.classList.contains('show')) closeMobileNav();
             });
-
             document.addEventListener('keydown', function (event) {
                 if (event.key === 'Escape') closeMobileNav();
             });
@@ -1762,46 +1422,60 @@
             function updateBlogCards() {
                 const query = blogSearch ? blogSearch.value.trim().toLowerCase() : '';
                 let visibleCount = 0;
-
                 blogCards.forEach(function (card) {
                     const category = card.getAttribute('data-category') || '';
-                    const searchable = (card.getAttribute('data-title') + ' ' + card.textContent).toLowerCase();
+                    const searchable = ((card.getAttribute('data-title') || '') + ' ' + card.textContent).toLowerCase();
                     const matchesFilter = activeBlogFilter === 'all' || category === activeBlogFilter;
                     const matchesSearch = !query || searchable.indexOf(query) !== -1;
                     const show = matchesFilter && matchesSearch;
                     card.classList.toggle('hide', !show);
                     if (show) visibleCount += 1;
                 });
-
-                if (blogResultCount) {
-                    blogResultCount.textContent = visibleCount === blogCards.length
-                        ? 'Showing all articles'
-                        : 'Showing ' + visibleCount + ' of ' + blogCards.length + ' articles';
-                }
-
+                if (blogResultCount) blogResultCount.textContent = visibleCount === blogCards.length ? 'Showing all articles' : 'Showing ' + visibleCount + ' of ' + blogCards.length + ' articles';
                 if (emptyBlogState) emptyBlogState.classList.toggle('show', visibleCount === 0);
             }
-
             blogFilters.forEach(function (button) {
                 button.addEventListener('click', function () {
                     activeBlogFilter = button.getAttribute('data-filter') || 'all';
-                    blogFilters.forEach(function (item) {
-                        item.classList.toggle('active', item === button);
-                    });
+                    blogFilters.forEach(function (item) { item.classList.toggle('active', item === button); });
                     updateBlogCards();
                 });
             });
-
-            if (blogSearch) {
-                blogSearch.addEventListener('input', updateBlogCards);
-            }
-
+            if (blogSearch) blogSearch.addEventListener('input', updateBlogCards);
             updateBlogCards();
 
-            if (backToTop) {
-                backToTop.addEventListener('click', function () {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.querySelectorAll('.play-button').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    const output = document.getElementById('insightOutput');
+                    const insight = button.getAttribute('data-insight') || '';
+                    if (output) output.textContent = insight;
+                    showToast('Insight unlocked.');
                 });
+            });
+
+            function copyToClipboard(value, successMessage) {
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(value).then(function () { showToast(successMessage); }).catch(function () { showToast(value); });
+                } else {
+                    const temp = document.createElement('textarea');
+                    temp.value = value;
+                    temp.setAttribute('readonly', '');
+                    temp.style.position = 'absolute';
+                    temp.style.left = '-9999px';
+                    document.body.appendChild(temp);
+                    temp.select();
+                    try { document.execCommand('copy'); showToast(successMessage); }
+                    catch (error) { showToast(value); }
+                    document.body.removeChild(temp);
+                }
+            }
+            const copyEmail = document.getElementById('copyEmail');
+            const copyPhone = document.getElementById('copyPhone');
+            if (copyEmail) copyEmail.addEventListener('click', function () { copyToClipboard('oshanmhr@gmail.com', 'Email copied: o.shanmhr@gmail.com'.replace('o.shan','oshan')); });
+            if (copyPhone) copyPhone.addEventListener('click', function () { copyToClipboard('+977 9823583937', 'Phone number copied.'); });
+
+            if (backToTop) {
+                backToTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
             }
         }());
     </script>
