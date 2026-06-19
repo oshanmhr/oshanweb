@@ -1009,6 +1009,171 @@
         .reveal.show { opacity: 1; transform: translateY(0); }
 
 
+
+
+        /* QA visibility fixes: fixed-navbar safe offset + stronger dark-mode contrast */
+        :root {
+            --nav-clearance: calc(var(--nav-height) + 24px);
+        }
+        html {
+            scroll-padding-top: var(--nav-clearance);
+        }
+        header[id],
+        section[id] {
+            scroll-margin-top: var(--nav-clearance);
+        }
+        main:focus {
+            outline: none;
+        }
+        .custom-navbar {
+            min-height: var(--nav-height);
+        }
+        [data-theme="dark"] {
+            --primary: #9fb3ff;
+            --primary-2: #818cf8;
+            --secondary: #67e8f9;
+            --accent: #c4b5fd;
+            --accent-2: #fdba74;
+            --ink: #f8f9ff;
+            --text: #dfe3f7;
+            --muted: #b9c0da;
+            --surface: rgba(20, 24, 49, 0.86);
+            --surface-strong: #151931;
+            --hero-panel: rgba(9, 12, 27, 0.74);
+            --hero-panel-border: rgba(255, 255, 255, 0.16);
+            --soft: #0f1328;
+            --border: rgba(255, 255, 255, 0.14);
+        }
+        [data-theme="dark"] body {
+            color: var(--text);
+        }
+        [data-theme="dark"] .section-title,
+        [data-theme="dark"] .header-title,
+        [data-theme="dark"] .logo,
+        [data-theme="dark"] .logo-name,
+        [data-theme="dark"] .play-card-title,
+        [data-theme="dark"] .mini-panel strong,
+        [data-theme="dark"] .tool-card .title,
+        [data-theme="dark"] .experience-card h3,
+        [data-theme="dark"] .blog-card-title,
+        [data-theme="dark"] .play-button strong,
+        [data-theme="dark"] .insight-output,
+        [data-theme="dark"] .contact-panel h2,
+        [data-theme="dark"] .contact-info strong,
+        [data-theme="dark"] .about-text strong {
+            color: var(--ink) !important;
+        }
+        [data-theme="dark"] .header-subtitle,
+        [data-theme="dark"] .about-text,
+        [data-theme="dark"] .experience-card .role,
+        [data-theme="dark"] .blog-card-text,
+        [data-theme="dark"] .playground .section-intro,
+        [data-theme="dark"] .contact-panel p,
+        [data-theme="dark"] .tool-card .subtitle {
+            color: var(--text) !important;
+        }
+        [data-theme="dark"] .section-intro,
+        [data-theme="dark"] .mini-panel span,
+        [data-theme="dark"] .stat-box span,
+        [data-theme="dark"] .play-card-text,
+        [data-theme="dark"] .blog-card-caption,
+        [data-theme="dark"] .play-button span,
+        [data-theme="dark"] .blog-result-count,
+        [data-theme="dark"] .empty-blog-state {
+            color: var(--muted) !important;
+        }
+        [data-theme="dark"] .section-subtitle,
+        [data-theme="dark"] .hero-badge,
+        [data-theme="dark"] .quick-chip,
+        [data-theme="dark"] .highlight-chip,
+        [data-theme="dark"] .experience-card .date,
+        [data-theme="dark"] .blog-card-caption a,
+        [data-theme="dark"] .contact-info a,
+        [data-theme="dark"] .btn-micro,
+        [data-theme="dark"] .blog-filter,
+        [data-theme="dark"] .theme-toggle,
+        [data-theme="dark"] .menu-toggle,
+        [data-theme="dark"] .social-icon,
+        [data-theme="dark"] .play-button i,
+        [data-theme="dark"] .quick-chip i,
+        [data-theme="dark"] .mini-panel i,
+        [data-theme="dark"] .tool-card .icon + .title,
+        [data-theme="dark"] .blog-search i {
+            color: var(--primary) !important;
+        }
+        [data-theme="dark"] .glass-card,
+        [data-theme="dark"] .blog-toolbar,
+        [data-theme="dark"] .credential-card,
+        [data-theme="dark"] .play-button,
+        [data-theme="dark"] .social-icon,
+        [data-theme="dark"] .btn-ghost,
+        [data-theme="dark"] .quick-chip {
+            background: var(--surface);
+            border-color: var(--border);
+        }
+        [data-theme="dark"] .stat-box,
+        [data-theme="dark"] .visitor-play-card,
+        [data-theme="dark"] .insight-output,
+        [data-theme="dark"] .highlight-chip,
+        [data-theme="dark"] .hero-badge,
+        [data-theme="dark"] .experience-card .date,
+        [data-theme="dark"] .btn-micro,
+        [data-theme="dark"] .blog-filter,
+        [data-theme="dark"] .theme-toggle,
+        [data-theme="dark"] .menu-toggle {
+            background: rgba(255,255,255,.08);
+            border-color: rgba(255,255,255,.14);
+        }
+        [data-theme="dark"] .btn-ghost:hover,
+        [data-theme="dark"] .btn-ghost:focus,
+        [data-theme="dark"] .btn-micro:hover,
+        [data-theme="dark"] .blog-filter:hover,
+        [data-theme="dark"] .blog-filter.active,
+        [data-theme="dark"] .social-icon:hover {
+            color: #ffffff !important;
+        }
+        [data-theme="dark"] .menu-toggle span,
+        [data-theme="dark"] .menu-toggle span::before,
+        [data-theme="dark"] .menu-toggle span::after {
+            background: var(--primary);
+        }
+        [data-theme="dark"] .text-dark,
+        [data-theme="dark"] .text-body,
+        [data-theme="dark"] .navbar-light,
+        [data-theme="dark"] .navbar-light .navbar-nav .nav-link {
+            color: var(--ink) !important;
+        }
+        [data-theme="dark"] .text-muted {
+            color: var(--muted) !important;
+        }
+        [data-theme="dark"] .form-control,
+        [data-theme="dark"] input,
+        [data-theme="dark"] textarea,
+        [data-theme="dark"] select {
+            color: var(--ink) !important;
+            background-color: rgba(255,255,255,.08) !important;
+            border-color: rgba(255,255,255,.16) !important;
+        }
+        [data-theme="dark"] input::placeholder,
+        [data-theme="dark"] textarea::placeholder {
+            color: var(--muted) !important;
+            opacity: 1;
+        }
+        @media (max-width: 991px) {
+            .nav-menu.show {
+                max-height: min(72vh, 560px);
+                overflow-y: auto;
+            }
+            [data-theme="dark"] .nav-menu {
+                background: rgba(15,19,40,.98);
+                border-color: rgba(255,255,255,.14);
+            }
+        }
+        @media (max-width: 767px) {
+            :root { --nav-clearance: calc(var(--nav-height) + 18px); }
+            .header { padding-top: calc(var(--nav-clearance) + 30px); }
+        }
+
         @media (max-width: 380px) {
             .logo-name { display: none; }
             .logo { max-width: 48px; }
@@ -1355,6 +1520,29 @@
             const surpriseMe = document.getElementById('surpriseMe');
             const energyText = document.getElementById('energyText');
 
+
+            function syncNavHeight() {
+                if (!navbar) return;
+                const height = Math.ceil(navbar.getBoundingClientRect().height || 76);
+                document.documentElement.style.setProperty('--nav-height', height + 'px');
+            }
+
+            function getNavClearance() {
+                const raw = getComputedStyle(document.documentElement).getPropertyValue('--nav-clearance');
+                const parsed = parseFloat(raw);
+                if (Number.isFinite(parsed)) return parsed;
+                return navbar ? navbar.getBoundingClientRect().height + 24 : 100;
+            }
+
+            function scrollToHash(hash, smooth) {
+                if (!hash || hash === '#') return false;
+                const target = document.querySelector(hash);
+                if (!target) return false;
+                const top = hash === '#home' ? 0 : target.getBoundingClientRect().top + window.pageYOffset - getNavClearance();
+                window.scrollTo({ top: Math.max(0, top), behavior: smooth ? 'smooth' : 'auto' });
+                return true;
+            }
+
             function showToast(message) {
                 if (!toastNote) return;
                 toastNote.textContent = message;
@@ -1397,9 +1585,20 @@
             }
 
             navLinks.forEach(function (link) {
-                link.addEventListener('click', function () {
-                    closeMobileNav();
-                    moveIndicatorTo(link);
+                link.addEventListener('click', function (event) {
+                    const hash = link.getAttribute('href');
+                    if (hash && hash.charAt(0) === '#') {
+                        event.preventDefault();
+                        closeMobileNav();
+                        syncNavHeight();
+                        scrollToHash(hash, true);
+                        history.pushState(null, '', hash);
+                        moveIndicatorTo(link);
+                        window.setTimeout(updatePageState, 250);
+                    } else {
+                        closeMobileNav();
+                        moveIndicatorTo(link);
+                    }
                 });
                 link.addEventListener('mouseenter', function () { moveIndicatorTo(link); });
             });
@@ -1438,9 +1637,14 @@
                 }
             }
 
-            window.addEventListener('scroll', updatePageState, { passive: true });
-            window.addEventListener('resize', updatePageState);
-            window.addEventListener('load', updatePageState);
+            syncNavHeight();
+            window.addEventListener('scroll', function () { syncNavHeight(); updatePageState(); }, { passive: true });
+            window.addEventListener('resize', function () { syncNavHeight(); updatePageState(); });
+            window.addEventListener('load', function () {
+                syncNavHeight();
+                if (window.location.hash) scrollToHash(window.location.hash, false);
+                updatePageState();
+            });
             updatePageState();
 
             if ('IntersectionObserver' in window) {
@@ -1517,6 +1721,21 @@
                     showToast(message);
                 });
             }
+
+            document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+                if (anchor.classList.contains('nav-link-pill')) return;
+                anchor.addEventListener('click', function (event) {
+                    const hash = anchor.getAttribute('href');
+                    if (hash && hash.length > 1 && document.querySelector(hash)) {
+                        event.preventDefault();
+                        closeMobileNav();
+                        syncNavHeight();
+                        scrollToHash(hash, true);
+                        history.pushState(null, '', hash);
+                        window.setTimeout(updatePageState, 250);
+                    }
+                });
+            });
 
             document.addEventListener('click', function (event) {
                 if (!siteNav || !navToggle) return;
