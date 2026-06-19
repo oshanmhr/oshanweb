@@ -28,6 +28,8 @@
             --muted: #777b92;
             --surface: rgba(255, 255, 255, 0.86);
             --surface-strong: #ffffff;
+            --hero-panel: rgba(255, 255, 255, 0.76);
+            --hero-panel-border: rgba(29, 30, 136, 0.12);
             --soft: #f5f7ff;
             --border: rgba(29, 30, 136, 0.13);
             --shadow: 0 28px 80px rgba(17, 19, 39, 0.16);
@@ -42,8 +44,10 @@
             --ink: #f8f9ff;
             --text: #d5d8ea;
             --muted: #a8adc5;
-            --surface: rgba(20, 24, 49, 0.78);
+            --surface: rgba(20, 24, 49, 0.82);
             --surface-strong: #151931;
+            --hero-panel: rgba(9, 12, 27, 0.68);
+            --hero-panel-border: rgba(255, 255, 255, 0.14);
             --soft: #0f1328;
             --border: rgba(255, 255, 255, 0.12);
             --shadow: 0 28px 90px rgba(0, 0, 0, 0.35);
@@ -96,6 +100,12 @@
         a:hover { text-decoration: none; }
         img { display: block; max-width: 100%; }
         button { font-family: inherit; }
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 3px solid rgba(0, 180, 216, 0.48);
+            outline-offset: 4px;
+        }
         ::selection { color: #fff; background: var(--primary); }
 
         .skip-link {
@@ -358,8 +368,15 @@
             z-index: -1;
             pointer-events: none;
             background:
-                radial-gradient(circle at 18% 24%, rgba(29,30,136,.13), transparent 24rem),
-                radial-gradient(circle at 82% 30%, rgba(0,180,216,.16), transparent 22rem);
+                linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.82) 43%, rgba(255,255,255,.62) 100%),
+                radial-gradient(circle at 18% 24%, rgba(29,30,136,.16), transparent 24rem),
+                radial-gradient(circle at 82% 30%, rgba(0,180,216,.19), transparent 22rem);
+        }
+        [data-theme="dark"] .hero-noise {
+            background:
+                linear-gradient(90deg, rgba(8,11,25,.96) 0%, rgba(8,11,25,.82) 43%, rgba(8,11,25,.66) 100%),
+                radial-gradient(circle at 18% 24%, rgba(29,30,136,.26), transparent 24rem),
+                radial-gradient(circle at 82% 30%, rgba(0,180,216,.20), transparent 22rem);
         }
         .floating-shape {
             position: absolute;
@@ -382,6 +399,26 @@
             align-items: center;
             gap: 50px;
         }
+        .hero-copy {
+            position: relative;
+            padding: clamp(26px, 4vw, 42px);
+            border: 1px solid var(--hero-panel-border);
+            border-radius: var(--radius-xl);
+            background: var(--hero-panel);
+            box-shadow: 0 24px 70px rgba(17, 19, 39, 0.10);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .hero-copy::before {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            z-index: -1;
+            border-radius: calc(var(--radius-xl) - 12px);
+            background: linear-gradient(135deg, rgba(255,255,255,.52), rgba(255,255,255,.18));
+            pointer-events: none;
+        }
+        [data-theme="dark"] .hero-copy::before { background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); }
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -401,15 +438,19 @@
             font-weight: 950;
             line-height: 1.02;
             letter-spacing: -2.4px;
+            text-shadow: 0 2px 18px rgba(255, 255, 255, 0.42);
         }
+        [data-theme="dark"] .header-title { text-shadow: 0 2px 22px rgba(0, 0, 0, 0.46); }
         .header-title .hello { display: block; font-size: clamp(2.7rem, 6vw, 5.6rem); }
         .header-title .role { display: block; font-size: clamp(2.05rem, 4.8vw, 4.55rem); }
         .gradient-text {
-            color: transparent;
-            background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+            color: var(--primary);
+            background: linear-gradient(90deg, var(--primary), var(--accent), #007e9b);
             -webkit-background-clip: text;
             background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
+        [data-theme="dark"] .gradient-text { background: linear-gradient(90deg, #9fb3ff, #c4b5fd, #67e8f9); -webkit-background-clip: text; background-clip: text; }
         .typing-caret::after {
             content: "";
             display: inline-block;
@@ -427,6 +468,7 @@
             color: var(--text);
             font-size: 1.12rem;
             line-height: 1.84;
+            font-weight: 650;
         }
         .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
         .hero-quickbar {
@@ -941,6 +983,7 @@
             .nav-link-pill { width: 100%; justify-content: flex-start; min-height: 45px; padding: 14px 16px; }
             .nav-link-pill:hover, .nav-link-pill.active { color: var(--primary); background: rgba(29,30,136,.08); }
             .hero-grid, .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-copy { margin: 0 auto; }
             .hero-stage { width: min(100%, 470px); margin: 0 auto; }
             .hero-actions, .hero-quickbar { justify-content: center; }
             .about-card { text-align: center; }
@@ -952,6 +995,7 @@
         @media (max-width: 767px) {
             .section { padding: 74px 0; }
             .header { padding: 116px 0 64px; }
+            .hero-copy { padding: 23px 19px; border-radius: 24px; }
             .header-title { letter-spacing: -1.5px; }
             .hero-stats, .highlight-grid, .interactive-strip, .playground-grid { grid-template-columns: 1fr; }
             .orbit-pill { display: none; }
@@ -988,7 +1032,7 @@
                 <li><a class="nav-link-pill" href="#Credentials">Credentials</a></li>
                 <li><a class="nav-link-pill" href="#Blog">Blog</a></li>
                 <li><a class="nav-link-pill" href="#contact">Contact</a></li>
-                <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+                <li class="nav-indicator" id="navIndicator" aria-hidden="true"></li>
             </ul>
 
             <div class="nav-actions">
@@ -1097,10 +1141,10 @@
                 <h2 class="section-title reveal">Softwares &amp; Platforms</h2>
                 <p class="section-intro reveal">A blend of HR systems, productivity tools, analytics platforms, and creative software that helps me work smarter and communicate better.</p>
                 <div class="row">
-                    <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="tool-card glass-card lift-card"><img src="assets/imgs/MSO.png" alt="Microsoft Office" class="icon"><h3 class="title">MS Office Suite</h3><p class="subtitle">Advanced Excel, PowerPoint, Word &amp; Teams</p></div></div>
-                    <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="tool-card glass-card lift-card"><img src="assets/imgs/Adove.png" alt="Adobe Creative Suite" class="icon"><h3 class="title">Adobe Creative Tools</h3><p class="subtitle">Photoshop, Illustrator, Lightroom, Acrobat</p></div></div>
-                    <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="tool-card glass-card lift-card"><img src="assets/imgs/HRIS.png" alt="HR Systems" class="icon"><h3 class="title">HR Technologies</h3><p class="subtitle">HRIS, HRMS, ATS, Payroll Systems</p></div></div>
-                    <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="tool-card glass-card lift-card"><img src="assets/imgs/Filmora.png" alt="Video Editing" class="icon"><h3 class="title">Video &amp; Audio Editing</h3><p class="subtitle">Filmora, CapCut, Audacity &amp; Similar Tools</p></div></div>
+                    <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="tool-card glass-card lift-card"><img src="assets/imgs/MSO.png" loading="lazy" alt="Microsoft Office" class="icon"><h3 class="title">MS Office Suite</h3><p class="subtitle">Advanced Excel, PowerPoint, Word &amp; Teams</p></div></div>
+                    <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="tool-card glass-card lift-card"><img src="assets/imgs/Adove.png" loading="lazy" alt="Adobe Creative Suite" class="icon"><h3 class="title">Adobe Creative Tools</h3><p class="subtitle">Photoshop, Illustrator, Lightroom, Acrobat</p></div></div>
+                    <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="tool-card glass-card lift-card"><img src="assets/imgs/HRIS.png" loading="lazy" alt="HR Systems" class="icon"><h3 class="title">HR Technologies</h3><p class="subtitle">HRIS, HRMS, ATS, Payroll Systems</p></div></div>
+                    <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="tool-card glass-card lift-card"><img src="assets/imgs/Filmora.png" loading="lazy" alt="Video Editing" class="icon"><h3 class="title">Video &amp; Audio Editing</h3><p class="subtitle">Filmora, CapCut, Audacity &amp; Similar Tools</p></div></div>
                 </div>
             </div>
         </section>
@@ -1112,10 +1156,10 @@
                 <p class="section-intro reveal">From recruitment and sales to HR business partnering, consulting, operations, and global HR leadership.</p>
                 <div class="experience-wrapper">
                     <div class="row">
-                        <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="experience-card glass-card lift-card"><img src="assets/imgs/CG.png" class="experience-logo" alt="Chaudhary Group"><h3>Chaudhary Group</h3><p class="role">Head of Human Resources<br>Global</p><span class="date">Oct 2023 – Present</span></div></div>
-                        <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="experience-card glass-card lift-card"><img src="assets/imgs/ABC Logo.jpg" class="experience-logo" alt="ABC Corp"><h3>ABC Corp</h3><p class="role">COO &amp; Consultant</p><span class="date">Sep 2022 – Present</span></div></div>
-                        <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="experience-card glass-card lift-card"><img src="assets/imgs/GG.png" class="experience-logo" alt="Golyan Group"><h3>Golyan Group</h3><p class="role">DM - Strategic Control<br>HRBP</p><span class="date">Jan 2020 – Sep 2022</span></div></div>
-                        <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="experience-card glass-card lift-card"><img src="assets/imgs/MJ.jpg" class="experience-logo" alt="merojob"><h3>merojob</h3><p class="role">Professional Recruiter<br>&amp; Sales</p><span class="date">Feb 2017 – Jan 2020</span></div></div>
+                        <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="experience-card glass-card lift-card"><img src="assets/imgs/CG.png" loading="lazy" class="experience-logo" alt="Chaudhary Group"><h3>Chaudhary Group</h3><p class="role">Head of Human Resources<br>Global</p><span class="date">Oct 2023 – Present</span></div></div>
+                        <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="experience-card glass-card lift-card"><img src="assets/imgs/ABC Logo.jpg" loading="lazy" class="experience-logo" alt="ABC Corp"><h3>ABC Corp</h3><p class="role">COO &amp; Consultant</p><span class="date">Sep 2022 – Present</span></div></div>
+                        <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="experience-card glass-card lift-card"><img src="assets/imgs/GG.png" loading="lazy" class="experience-logo" alt="Golyan Group"><h3>Golyan Group</h3><p class="role">DM - Strategic Control<br>HRBP</p><span class="date">Jan 2020 – Sep 2022</span></div></div>
+                        <div class="col-md-6 col-lg-3 mb-4 reveal"><div class="experience-card glass-card lift-card"><img src="assets/imgs/MJ.jpg" loading="lazy" class="experience-logo" alt="merojob"><h3>merojob</h3><p class="role">Professional Recruiter<br>&amp; Sales</p><span class="date">Feb 2017 – Jan 2020</span></div></div>
                     </div>
                 </div>
             </div>
@@ -1127,12 +1171,12 @@
                 <h2 class="section-title reveal">Recent Certifications &amp; Courses</h2>
                 <p class="section-intro reveal">Selected certifications that reflect my interest in analytics, digital leadership, HR strategy, business partnering, and planning.</p>
                 <div class="row justify-content-center">
-                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://simpli-web.app.link/e/702FjvGmIyb" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/BAexcel.png" alt="Business Analytics with Excel"><span class="credential-overlay"><span><h3>Simplilearn</h3><p>Business Analytics with Excel</p></span></span></a></div>
-                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://simpli-web.app.link/e/03lgHbmmIyb" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/DL.png" alt="Digital Leadership"><span class="credential-overlay"><span><h3>Simplilearn</h3><p>Digital Leadership</p></span></span></a></div>
-                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://simpli-web.app.link/e/EDS0RCCmIyb" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/PBI.png" alt="Power BI"><span class="credential-overlay"><span><h3>Simplilearn</h3><p>Power BI for Beginners</p></span></span></a></div>
-                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://www.linkedin.com/learning/certificates/46f09c4ad973113fc69d800551c9de061db6be8035a2d4ecc041a30c89bfc0bf" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/SHRM.png" alt="Strategic HR"><span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>Strategic Human Resources</p></span></span></a></div>
-                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://www.linkedin.com/learning/certificates/191b2193b329a1ccf9c33407178eb1f6bfe68337f24aa58abe4c1b59d45cc001" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/HRBP.png" alt="HR Business Partner"><span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>HR Business Partner</p></span></span></a></div>
-                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://www.linkedin.com/learning/certificates/aeee7a2a01e81e012328d6f0d39c55f9ecb4d029a87c68890de799d61737a862" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/Splan.png" alt="Strategic Planning"><span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>Strategic Planning Foundations</p></span></span></a></div>
+                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://simpli-web.app.link/e/702FjvGmIyb" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/BAexcel.png" loading="lazy" alt="Business Analytics with Excel"><span class="credential-overlay"><span><h3>Simplilearn</h3><p>Business Analytics with Excel</p></span></span></a></div>
+                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://simpli-web.app.link/e/03lgHbmmIyb" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/DL.png" loading="lazy" alt="Digital Leadership"><span class="credential-overlay"><span><h3>Simplilearn</h3><p>Digital Leadership</p></span></span></a></div>
+                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://simpli-web.app.link/e/EDS0RCCmIyb" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/PBI.png" loading="lazy" alt="Power BI"><span class="credential-overlay"><span><h3>Simplilearn</h3><p>Power BI for Beginners</p></span></span></a></div>
+                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://www.linkedin.com/learning/certificates/46f09c4ad973113fc69d800551c9de061db6be8035a2d4ecc041a30c89bfc0bf" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/SHRM.png" loading="lazy" alt="Strategic HR"><span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>Strategic Human Resources</p></span></span></a></div>
+                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://www.linkedin.com/learning/certificates/191b2193b329a1ccf9c33407178eb1f6bfe68337f24aa58abe4c1b59d45cc001" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/HRBP.png" loading="lazy" alt="HR Business Partner"><span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>HR Business Partner</p></span></span></a></div>
+                    <div class="col-md-4 col-lg-3 mb-4 reveal"><a href="https://www.linkedin.com/learning/certificates/aeee7a2a01e81e012328d6f0d39c55f9ecb4d029a87c68890de799d61737a862" target="_blank" rel="noopener" class="credential-card"><img src="assets/imgs/Splan.png" loading="lazy" alt="Strategic Planning"><span class="credential-overlay"><span><h3>LinkedIn Learning</h3><p>Strategic Planning Foundations</p></span></span></a></div>
                 </div>
             </div>
         </section>
@@ -1172,8 +1216,8 @@
                 <p class="blog-result-count reveal" id="blogResultCount">Showing all articles</p>
 
                 <div class="blog-list" id="blogList">
-                    <article class="blog-card glass-card lift-card reveal" data-category="career" data-title="How to Build A Strong Personal Brand for Career Success personal branding career growth"><div class="blog-card-media"><img src="assets/imgs/b1.jpg" class="blog-card-img" alt="Personal Branding"><span class="blog-badge"><i class="ti-pencil-alt"></i> Career Growth</span></div><div class="blog-card-body"><h3 class="blog-card-title">How to Build A Strong Personal Brand for Career Success?</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank" rel="noopener">By ABC Corp Nepal</a><span>Career</span></p><p class="blog-card-text">Personal branding is not optional anymore. It helps professionals build credibility, visibility, and long-term career opportunity.</p><a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
-                    <article class="blog-card glass-card lift-card reveal" data-category="workplace" data-title="Is Work-Life Balance a Myth Cycle or Achievement balance wellbeing rhythm"><div class="blog-card-media"><img src="assets/imgs/b2.jpg" class="blog-card-img" alt="Work-Life Balance"><span class="blog-badge"><i class="ti-heart"></i> Work &amp; Life</span></div><div class="blog-card-body"><h3 class="blog-card-title">Is Work-Life Balance a Myth, Cycle, or Achievement?</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank" rel="noopener">By ABC Corp Nepal</a><span>Workplace</span></p><p class="blog-card-text">A reflection on whether balance is a fixed destination, a repeating cycle, or a set of conscious choices that protect performance and well-being.</p><a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
+                    <article class="blog-card glass-card lift-card reveal" data-category="career" data-title="How to Build A Strong Personal Brand for Career Success personal branding career growth"><div class="blog-card-media"><img src="assets/imgs/b1.jpg" loading="lazy" class="blog-card-img" alt="Personal Branding"><span class="blog-badge"><i class="ti-pencil-alt"></i> Career Growth</span></div><div class="blog-card-body"><h3 class="blog-card-title">How to Build A Strong Personal Brand for Career Success?</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank" rel="noopener">By ABC Corp Nepal</a><span>Career</span></p><p class="blog-card-text">Personal branding is not optional anymore. It helps professionals build credibility, visibility, and long-term career opportunity.</p><a href="https://www.linkedin.com/pulse/how-build-strong-personal-brand-career-success-abc-corp-nepal" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
+                    <article class="blog-card glass-card lift-card reveal" data-category="workplace" data-title="Is Work-Life Balance a Myth Cycle or Achievement balance wellbeing rhythm"><div class="blog-card-media"><img src="assets/imgs/b2.jpg" loading="lazy" class="blog-card-img" alt="Work-Life Balance"><span class="blog-badge"><i class="ti-heart"></i> Work &amp; Life</span></div><div class="blog-card-body"><h3 class="blog-card-title">Is Work-Life Balance a Myth, Cycle, or Achievement?</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank" rel="noopener">By ABC Corp Nepal</a><span>Workplace</span></p><p class="blog-card-text">A reflection on whether balance is a fixed destination, a repeating cycle, or a set of conscious choices that protect performance and well-being.</p><a href="https://www.linkedin.com/pulse/work-life-balance-myth-cycle-achievement-abc-corp-nepal" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
                     <article class="blog-card glass-card lift-card reveal" data-category="workplace" data-title="Gentle reminder corporate communication follow up patience accountability"><div class="blog-card-media"><img src="https://media.licdn.com/dms/image/v2/D5612AQFhPGx_EQiPNg/article-cover_image-shrink_720_1280/B56Z61Xd4zHIAU-/0/1781159294515?e=2147483647&amp;t=dHI5AwGx-nc724_3hQXHIVx-5w3cmE7Va9SH-fwqVLY&amp;v=beta" class="blog-card-img" alt="Gentle Reminder article image" loading="lazy"><span class="blog-badge"><i class="ti-email"></i> Workplace</span></div><div class="blog-card-body"><h3 class="blog-card-title">“Gentle reminder” is the corporate way of saying, “I have already reminded you three times...”</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/gentle-reminder-corporate-way-saying-i-have-already-you-maharjan-4yh7c/" target="_blank" rel="noopener">By Oshan Maharjan</a><span>Jun 11, 2026</span></p><p class="blog-card-text">A sharp and relatable take on corporate follow-ups, tone, accountability, and the quiet meaning behind polite reminders.</p><a href="https://www.linkedin.com/pulse/gentle-reminder-corporate-way-saying-i-have-already-you-maharjan-4yh7c/" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
                     <article class="blog-card glass-card lift-card reveal" data-category="society" data-title="The GenZ Movement Pain to Purpose Nepal history youth corruption free speech hope"><div class="blog-card-media"><img src="https://media.licdn.com/dms/image/v2/D5612AQH0dca5LTnfBQ/article-cover_image-shrink_720_1280/B56ZkyBQc1I8AI-/0/1757480815245?e=2147483647&amp;t=TUaoc-4c_ZW_q7c4Z31l6LVRFoRaRVaErSWTWN3gpHE&amp;v=beta" class="blog-card-img" alt="GenZ Movement article image" loading="lazy"><span class="blog-badge"><i class="ti-flag-alt"></i> Society</span></div><div class="blog-card-body"><h3 class="blog-card-title">The GenZ Movement: Pain to Purpose, A New Chapter of Nepal</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/genz-movement-pain-purpose-new-chapter-nepal-history-never-maharjan-khooc/" target="_blank" rel="noopener">By Oshan Maharjan</a><span>Sep 10, 2025</span></p><p class="blog-card-text">A heartfelt reflection on youth-led courage, grief, chaos, and the responsibility to rebuild Nepal with hope and wisdom.</p><a href="https://www.linkedin.com/pulse/genz-movement-pain-purpose-new-chapter-nepal-history-never-maharjan-khooc/" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
                     <article class="blog-card glass-card lift-card reveal" data-category="workplace" data-title="Some days I think for 6 hours and work for 2 hours productivity thinking burnout human performance"><div class="blog-card-media"><img src="https://media.licdn.com/dms/image/v2/D5612AQFJ4gNyxDY-ug/article-cover_image-shrink_720_1280/B56ZtEgTv.GsAM-/0/1766380881150?e=2147483647&amp;t=A2OeJtX7dLdOxgkHW7eV63wvIba2jzChEu8CiWwkQqE&amp;v=beta" class="blog-card-img" alt="Strategic thinking and productivity article image" loading="lazy"><span class="blog-badge"><i class="ti-time"></i> Productivity</span></div><div class="blog-card-body"><h3 class="blog-card-title">Some Days I Think for 6 Hours and Work for About 2 Hours, Yet It Still Works</h3><p class="blog-card-caption"><a href="https://www.linkedin.com/pulse/some-days-i-think-6-hours-work-2-yet-still-works-oshan-maharjan-vdsac/" target="_blank" rel="noopener">By Oshan Maharjan</a><span>Dec 22, 2025</span></p><p class="blog-card-text">A human-centered reminder that output is not always linear, and that deep thinking can be as valuable as visible execution.</p><a href="https://www.linkedin.com/pulse/some-days-i-think-6-hours-work-2-yet-still-works-oshan-maharjan-vdsac/" target="_blank" rel="noopener" class="btn-micro blog-card-link">Read more <i class="ti-angle-double-right"></i></a></div></article>
@@ -1297,12 +1341,15 @@
                 sections.forEach(function (section) {
                     const sectionTop = section.offsetTop - 132;
                     const sectionBottom = sectionTop + section.offsetHeight;
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) currentId = section.id;
+                    const sectionId = section.id;
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom && document.querySelector('.nav-link-pill[href="#' + sectionId + '"]')) currentId = sectionId;
                 });
 
                 navLinks.forEach(function (link) {
                     const isCurrent = link.getAttribute('href') === '#' + currentId;
                     link.classList.toggle('active', isCurrent);
+                    if (isCurrent) link.setAttribute('aria-current', 'page');
+                    else link.removeAttribute('aria-current');
                     if (isCurrent) moveIndicatorTo(link);
                 });
 
@@ -1471,7 +1518,7 @@
             }
             const copyEmail = document.getElementById('copyEmail');
             const copyPhone = document.getElementById('copyPhone');
-            if (copyEmail) copyEmail.addEventListener('click', function () { copyToClipboard('oshanmhr@gmail.com', 'Email copied: o.shanmhr@gmail.com'.replace('o.shan','oshan')); });
+            if (copyEmail) copyEmail.addEventListener('click', function () { copyToClipboard('oshanmhr@gmail.com', 'Email copied: oshanmhr@gmail.com'); });
             if (copyPhone) copyPhone.addEventListener('click', function () { copyToClipboard('+977 9823583937', 'Phone number copied.'); });
 
             if (backToTop) {
