@@ -1251,6 +1251,131 @@
             .blog-card-link { width: 100%; }
             .contact-info { line-height: 1.8; }
         }
+
+
+        /* 100% browser zoom navbar/content spacing fix */
+        :root {
+            --nav-extra-gap: 18px;
+            --nav-clearance: calc(var(--nav-height) + var(--nav-extra-gap));
+        }
+
+        .custom-navbar {
+            padding: 8px 0;
+            min-height: auto;
+        }
+
+        .custom-navbar.scrolled {
+            padding: 6px 0;
+        }
+
+        .nav-inner {
+            min-height: 46px;
+            gap: 12px;
+        }
+
+        .logo {
+            min-width: 184px;
+            max-width: 230px;
+            gap: 10px;
+        }
+
+        .logo-mark {
+            flex-basis: 38px;
+            width: 38px;
+            height: 38px;
+            border-radius: 13px;
+            font-size: .9rem;
+            box-shadow: 0 0 0 4px rgba(29,30,136,.08);
+        }
+
+        .logo-name {
+            max-width: 170px;
+            font-size: .94rem;
+        }
+
+        .nav-menu {
+            gap: 3px;
+            padding: 4px;
+        }
+
+        .nav-link-pill {
+            min-height: 34px;
+            padding: 7px 10px;
+            font-size: .78rem;
+        }
+
+        .nav-indicator {
+            top: 4px;
+            left: 4px;
+            height: 34px;
+        }
+
+        .theme-toggle,
+        .menu-toggle {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+        }
+
+        .header {
+            min-height: 100svh;
+            padding-top: calc(var(--nav-clearance) + 40px);
+            padding-bottom: 64px;
+        }
+
+        .section {
+            scroll-margin-top: var(--nav-clearance);
+        }
+
+        @media (max-width: 1199px) and (min-width: 992px) {
+            .nav-inner { gap: 8px; }
+            .logo { min-width: 150px; max-width: 180px; gap: 8px; }
+            .logo-name { max-width: 130px; font-size: .88rem; }
+            .logo-mark { flex-basis: 34px; width: 34px; height: 34px; font-size: .82rem; border-radius: 12px; }
+            .nav-link-pill { min-height: 32px; padding: 6px 8px; font-size: .72rem; }
+            .nav-indicator { height: 32px; }
+            .theme-toggle, .menu-toggle { width: 38px; height: 38px; }
+            .nav-actions { gap: 7px; }
+        }
+
+        @media (max-width: 991px) {
+            :root { --nav-extra-gap: 16px; }
+            .custom-navbar { padding: 8px 0; }
+            .nav-inner { min-height: 44px; }
+            .nav-menu {
+                top: calc(100% + 8px);
+                max-height: 0;
+            }
+            .nav-menu.show {
+                max-height: min(70vh, 500px);
+                overflow-y: auto;
+            }
+            .nav-link-pill {
+                min-height: 42px;
+                padding: 12px 14px;
+                font-size: .86rem;
+            }
+            .header {
+                padding-top: calc(var(--nav-clearance) + 34px);
+                padding-bottom: 58px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            :root { --nav-extra-gap: 14px; }
+            .header {
+                padding-top: calc(var(--nav-clearance) + 28px);
+                padding-bottom: 54px;
+            }
+            .section { padding: 68px 0; }
+        }
+
+        @media (max-width: 420px) {
+            .logo-name { max-width: calc(100vw - 190px); }
+            .theme-toggle, .menu-toggle { width: 40px; height: 40px; }
+            .nav-actions { gap: 7px; }
+        }
+
     </style>
 </head>
 <body>
@@ -1614,7 +1739,7 @@
                 let currentId = 'home';
 
                 sections.forEach(function (section) {
-                    const sectionTop = section.offsetTop - 132;
+                    const sectionTop = section.offsetTop - (getNavClearance() + 40);
                     const sectionBottom = sectionTop + section.offsetHeight;
                     const sectionId = section.id;
                     if (scrollPosition >= sectionTop && scrollPosition < sectionBottom && document.querySelector('.nav-link-pill[href="#' + sectionId + '"]')) currentId = sectionId;
@@ -1640,6 +1765,8 @@
             syncNavHeight();
             window.addEventListener('scroll', function () { syncNavHeight(); updatePageState(); }, { passive: true });
             window.addEventListener('resize', function () { syncNavHeight(); updatePageState(); });
+            window.addEventListener('orientationchange', function () { window.setTimeout(function () { syncNavHeight(); updatePageState(); }, 250); });
+            window.addEventListener('hashchange', function () { syncNavHeight(); scrollToHash(window.location.hash, false); updatePageState(); });
             window.addEventListener('load', function () {
                 syncNavHeight();
                 if (window.location.hash) scrollToHash(window.location.hash, false);
